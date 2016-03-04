@@ -2,5 +2,5 @@
 ini_set('display_errors',1);
 session_start();
 define("ROOT",$_SERVER['DOCUMENT_ROOT']);
-define("ROOT_LOCAL","http://".$_SERVER['SERVER_NAME']."/");
-include_once "classes/database.php";
+//define("ROOT_LOCAL","http://".$_SERVER['SERVER_NAME']."/");
+//include_once "classes/database.php";

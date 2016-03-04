@@ -1,5 +1,6 @@
 <?php
 include "../core/main.includes.php";
+
 //$id = @$page[2];
 //if ($page[0]) {
 //
