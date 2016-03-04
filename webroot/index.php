@@ -2,7 +2,7 @@
 <?php
 echo ("Estou funcionando <br />");
 
-include("./core/main.includes.php");
+include("../core/main.includes.php");
 
 echo "<table>";
     echo "<tr>
@@ -13,7 +13,7 @@ echo "</table>";
 
 //$id = @$page[2];
     
-if ($page[0]) {
+if (@$page[0]) {
 
     //Verificacao de pagina existente
     if (@$page[1]) {
