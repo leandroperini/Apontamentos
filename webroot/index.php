@@ -1,18 +1,26 @@
 
+<html>
+    <head>
+        <title> Apontamentos </title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Bem vindo ao Sistema de Apontamentos<br /></td>
+            </tr>
+            <tr>
+                <td><a href="../core/login.php">Acessar Sistema</a></td>
+            </tr>
+        </table>
+    </body>
+</html>
+
 <?php
-echo ("Estou funcionando <br />");
 
 include("../core/main.includes.php");
 
-echo "<table>";
-    echo "<tr>
-            <td align='center'><input type='button' value='Tela Login' onclick = location.href='./core/login.php'; ></td>
-            <td align='center'><input type='button' value='Tela Home' onclick = location.href='./core/home.php'; ></td>
-        </tr>";
-echo "</table>";
-
 //$id = @$page[2];
-    
+/*    
 if (@$page[0]) {
 
     //Verificacao de pagina existente
@@ -44,4 +52,6 @@ if (@$page[0]) {
     }
 
 //    include 'layouts/' . $class->layout . ".php";
-}
+
+ * }
+ */
