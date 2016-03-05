@@ -7,53 +7,59 @@ class Database {
             'host' => '127.0.0.1',
             'user' => 'root',
             'pass' => '',
-            'db' => 'apontamentos',
-        ],        
+            'db'   => 'apontamentos',
+        ],
+        'erp'          => [
+            'host' => '127.0.0.1',
+            'user' => 'root',
+            'pass' => '',
+            'db'   => 'apontamentos',
+        ],
     ];
 
-    function Database() {
-        mysql_connect($this->host, $this->user, $this->pass) or die("erro na conexao com a base de dados");
-        mysql_select_db($this->db) or die("banco de dados nao existe");
-        mysql_query("SET NAMES 'utf8'");
-        mysql_query('SET character_set_connection=utf8');
-        mysql_query('SET character_set_client=utf8');
-        mysql_query('SET character_set_results=utf8');
-    }
-
     /**
-     * 
+     *
+     * i corresponding variable has type integer
+      d	corresponding variable has type double
+      s	corresponding variable has type string
+      b	corresponding variable is a blob and will be sent in packets
      */
-    function connect($host = null, $user = null, $pass = null, $db = null) {
+    function execute($sql = null, array $params = [], $connectionConf = 'apontamentos') {
+        $return    = false;
+        $types     = '';
+        $bindParam = [];
+        try {
+            $connection = new mysqli($this->db_conf[$connectionConf]['host'], $this->db_conf[$connectionConf]['user'], $this->db_conf[$connectionConf]['pass'], $this->db_conf[$connectionConf]['db']);
 
-        mysql_connect($host, $user, $pass) or die("erro na conexao com a base de dados");
-        mysql_select_db($db) or die("banco de dados nao existe");
-        mysql_query("SET NAMES 'utf8'");
-        mysql_query('SET character_set_connection=utf8');
-        mysql_query('SET character_set_client=utf8');
-        mysql_query('SET character_set_results=utf8');
+            $stmt = $connection->prepare($sql);
+            if (!empty(@$params['types']) && !empty(@$params['values'])) {
+                foreach (@$params['types'] as $type) {
+                    $types .= $type;
+                }
+
+                array_push($bindParam, $types);
+
+                foreach (@$params['values'] as &$value) {
+                    array_push($bindParam, $value);
+                }
+
+                call_user_func_array([$stmt, 'bind_param'], $this->refValues($bindParam));
+            }
+            $stmt->execute();
+            $return = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        } catch (Exception $exc) {
+            throw Exception;
+        } finally {
+            $connection->close();
+            return $return;
+        }
     }
 
-    function reconect() {
-        mysql_connect($this->host, $this->user, $this->pass) or die("erro na conexao com a base de dados");
-        mysql_select_db($this->db) or die("banco de dados nao existe");
-        mysql_query("SET NAMES 'utf8'");
-        mysql_query('SET character_set_connection=utf8');
-        mysql_query('SET character_set_client=utf8');
-        mysql_query('SET character_set_results=utf8');
-    }
-
-    function close() {
-        mysql_close();
-    }
-
-    /**
-     * 
-     */
-    function conect_sqlserver() {
-        mssql_connect($this->host_sqlserver, $this->user_sqlserver, $this->pass_sqlserver) or die("erro na conexao com a base de dados");
-        mssql_select_db($this->db_sqlserver) or die("banco de dados nao existe");
+    function refValues($arr) {
+        $refs       = array();
+        foreach ($arr as $key => $value)
+            $refs[$key] = &$arr[$key];
+        return $refs;
     }
 
 }
-
-?>

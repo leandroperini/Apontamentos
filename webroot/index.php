@@ -1,57 +1,46 @@
-
-<html>
-    <head>
-        <title> Apontamentos </title>
-    </head>
-    <body>
-        <table>
-            <tr>
-                <td>Bem vindo ao Sistema de Apontamentos<br /></td>
-            </tr>
-            <tr>
-                <td><a href="../core/login.php">Acessar Sistema</a></td>
-            </tr>
-        </table>
-    </body>
-</html>
-
 <?php
 
-include("../core/main.includes.php");
+include "../core/main.includes.php";
 
-//$id = @$page[2];
-/*    
-if (@$page[0]) {
-
-    //Verificacao de pagina existente
-    if (@$page[1]) {
-        if (!file_exists("core/" . $page[1] . ".php")) {
-            Header("location: ./core");
-            die();
-        }
-    } else {
-        if (!file_exists("./" . $page[0] . "/index.php")) {
-            Header("location: /home/erro");
-            die();
-        }
+$urlComponents = getUrlComponents();
+$URLPATH       = $urlComponents['path'];
+define("URLPATH", $URLPATH);
+$route         = @$ROUTES[$URLPATH];
+parse_str(@$urlComponents['query'], $params);
+if (!empty($route) && $route != '/errors/NotFound') {
+    list($classPath, $method) = explode('@', $route);
+    if (empty($method)) {
+        $method = 'index';
     }
+    $class = end(explode('/', $classPath));
+    try {
+        include_once '../core' . $classPath . '.php';
+        $class = new $class;
+        $class->$method($params);
 
-    $class = new $page[0]();
-
-    if (@$page[1]) {
-       include "core/" . $page[2] . ".php";
-    } else {
-        include "./" . $page[0] . "/index.php";
+        $page = '../core/pages/default.php';
+        $page = $class->page? : $page;
+        include_once '../core/pages/' . $page . '.php';
+    } catch (Exception $exc) {
+        echo $exc->getMessage();
+    } finally {
+        die;
     }
-    
-    if (@$page[3]) {
-        $nivel = sizeof($page);
-        for ($i = 3; $i <= $nivel; $i++) {
-            @$class->params[substr(strstr(@$page[$i], '=', true), 1)] = substr(strstr(@$page[$i], '='), 1);
-        }
-    }
+} elseif ($route == '/errors/NotFound') {
+    include_once '../core/errors/NotFound.php';
+    $class = new NotFound;
+    $class->index($params);
+    $page  = '../core/pages/default.php';
+    $page  = $class->page? : $page;
+    include_once '../core/pages/' . $page . '.php';
+    die;
+} else {
+    Header("location: /errors/notfound");
+    die();
+}
 
-//    include 'layouts/' . $class->layout . ".php";
-
- * }
- */
+function getUrlComponents() {
+    $url        = @$_SERVER['REDIRECT_URL']? : $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    $components = parse_url($url? : '/');
+    return $components;
+}
