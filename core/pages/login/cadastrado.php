@@ -13,6 +13,7 @@ and open the template in the editor.
         <?php
             $nome = $_POST["nome"];
             echo "Usuário $nome Cadastrado.";
+            
         ?>
     </body>
 </html>

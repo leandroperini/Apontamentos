@@ -21,7 +21,7 @@ class AppController {
     }
 
     public function index() {
-        
+         
     }
 
 }

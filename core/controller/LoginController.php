@@ -41,6 +41,5 @@ class LoginController extends AppController {
     }
     public function usuarios($param) {
         $this->page = 'login/usuarios';
-
     }
 }

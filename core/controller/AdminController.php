@@ -7,7 +7,7 @@
  */
 class cadastro{
 
-    public function setCadastro() { 
+    public function setCadastro() {
         $nome   = $_POST["nome"];
         $user   = $_POST["user"];
         $senha  = $_POST["senha"];
