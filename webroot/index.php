@@ -1,6 +1,6 @@
 <?php
 
-include "../core/main.includes.php";
+include '../core/main.includes.php';
 
 $urlComponents = getUrlComponents();
 $URLPATH       = $urlComponents['path'];
@@ -12,7 +12,7 @@ if (!empty($route) && $route != '/errors/NotFound') {
     if (empty($method)) {
         $method = 'index';
     }
-    $class = end(explode('/', $classPath));
+    @$class = end(explode('/', $classPath));
     try {
         include_once '../core' . $classPath . '.php';
         $class = new $class;

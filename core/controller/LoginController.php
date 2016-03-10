@@ -13,10 +13,15 @@
  */
 class LoginController extends AppController {
 
+    public function index($param) {
+        $this->page = 'login/login';
+    }
+
     public function cadastroNovo($params) {
         $this->page = 'login/cadastrar';
-        $nome       = 'tarcio';
+        /* $nome       = 'tarcio';
         $senha      = '321';
+        
         echo $this->db->execute("insert teste (nome, senha) values (?, ?);", [
             'values' => [
                 $nome,
@@ -27,7 +32,15 @@ class LoginController extends AppController {
                 's',
             ],
         ]);
-        print_r($this->db->execute("select * from teste"));
+         * 
+         */
+        print_r($this->db->execute("select * from user"));
     }
+    public function cadastroSalvo($param) {
+        $this->page = 'login/cadastrado';
+    }
+    public function usuarios($param) {
+        $this->page = 'login/usuarios';
 
+    }
 }

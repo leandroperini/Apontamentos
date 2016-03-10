@@ -9,11 +9,11 @@ class Database {
             'pass' => '',
             'db'   => 'apontamentos',
         ],
-        'erp'          => [
+        'sga'          => [
             'host' => '127.0.0.1',
             'user' => 'root',
             'pass' => '',
-            'db'   => 'apontamentos',
+            'db'   => 'sga',
         ],
     ];
 
@@ -24,7 +24,7 @@ class Database {
       s	corresponding variable has type string
       b	corresponding variable is a blob and will be sent in packets
      */
-    function execute($sql = null, array $params = [], $connectionConf = 'apontamentos') {
+    function execute($sql = null, array $params = [], $connectionConf = 'sga') {
         $return    = false;
         $types     = '';
         $bindParam = [];
