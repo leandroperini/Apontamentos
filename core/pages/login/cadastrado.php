@@ -11,9 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            $nome = $_POST["nome"];
-            echo "Usuário $nome Cadastrado.";
-            
+            echo "Usuário Cadastrado.";
         ?>
     </body>
 </html>

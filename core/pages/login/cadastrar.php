@@ -1,4 +1,5 @@
 
+
 <html>
     
 <head>
@@ -9,7 +10,7 @@
     <center><h2>Bem vindo ao <strong>SGA</strong>, Sistema de Gerenciamento de Atividades!</h2></center>
     <form action="../../controller/AdminController.php" method="POST" >
         <center>
-             Tela de Cadastro de novo usuários.
+            Seja bem vindo <b><?php echo $_SESSION[@usuario]; ?></b> a Tela de Cadastro de novo usuários.
             <fieldset>
                 <table width="50%" border="0" cellpadding="10">
                     <tr>

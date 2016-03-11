@@ -11,6 +11,7 @@
  *
  * @author Leandro Perini
  */
+
 class MainController extends AppController {
 
     public function index($params) {
