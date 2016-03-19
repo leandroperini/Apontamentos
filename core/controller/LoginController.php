@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of MainController
  *
@@ -34,7 +28,37 @@ class LoginController extends AppController {
         ]);
          * 
          */
-        print_r($this->db->execute("select * from user"));
+               
+        
+        $nome   = $_POST["nome"];
+        $user   = $_POST["user"];
+        $senha  = $_POST["senha"];
+        $email  = $_POST["email"];
+        $cargo  = $_POST["cargo"];
+        $status = $_POST["status"];
+    
+        $resultado = $this->db->execute("INSERT user (nome_user, email_user, cargo_user, senha_user) values (?, ?, ?, ?);", [
+            'values' => [
+                $user,
+                $email,
+                $cargo,
+                $senha,
+            ],
+            'types'  => [
+                's',
+                's',
+                'i',
+                's',
+            ],
+        ]);
+        
+        if (array_key_exists("submit", $_POST)){  // Entra se "submit" existe
+            echo $nome, $user, $senha, $email, $cargo, $status;
+            header('Location: /login/cadastrado');
+        }
+        else{
+            // echo "<script language='javascript' type='text/javascript'>alert('Preencha pelo menos um dos campos!');window.location.href='login.html'</script>";
+        }
     }
     public function cadastroSalvo($param) {
         $this->page = 'login/cadastrado';

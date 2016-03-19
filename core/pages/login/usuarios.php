@@ -7,8 +7,8 @@ class usuarios extends AppController {
         
         while($row = mysqli_fetch_array($querySQL)) {
 	  echo $row['nome'] . "<br />";
-
           
 	  }
+          echo 'Teste';
     }
 }

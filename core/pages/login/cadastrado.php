@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Confirmação de cadastro de usuário
 -->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro Realizado!</title>
+        <title>Usuário Cadastrado</title>
     </head>
     <body>
-        <?php
-            echo "Usuário Cadastrado.";
-        ?>
+        <fieldset>
+            <table>
+                <tr>
+                    <center>
+                        <font>Usuário Cadastrado com Sucesso</font>
+                        <?php
+                            print_r($this->db->execute("select * from user"));
+                        ?>
+                        
+                    </center>
+                </tr>
+            </table>
+        </fieldset>
     </body>
 </html>

@@ -1,5 +1,4 @@
 
-
 <html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,7 +6,7 @@
     </head>
 <body>
     <center><h2>Bem vindo ao <strong>SGA</strong>, Sistema de Gerenciamento de Atividades!</h2></center>
-    <form action="./home.html" method="POST" >
+    <form action="./" method="POST" >
         <div>
             <br>
             <center>

@@ -1,16 +1,21 @@
 <?php
 
 $ROUTES = [
-    '/'                     => '/controller/MainController@index',
-    '/home'                 => '/controller/MainController@index',
+    '/'                                         => '/controller/MainController@index',
+    '/home'                                     => '/controller/MainController@index',
     
-    '/login'                => '/controller/LoginController@index',
-    '/login/cadastrar'      => '/controller/LoginController@cadastroNovo',
-    '/login/cadastrado'     => '/controller/LoginController@cadastroSalvo',
-    '/login/usuarios'     => '/controller/LoginController@usuarios',
+    '/login'                                    => '/controller/LoginController@index',
+    '/login/cadastrar'                          => '/controller/LoginController@cadastroNovo',
+    '/login/cadastrado'                         => '/controller/LoginController@cadastroSalvo',
+    '/login/usuarios'                           => '/controller/LoginController@usuarios',
     
-    '/admin'                => '/controller/AdminController',
-    '/admin/user/edit'      => '/controller/AdminController@userEdit',
+    '/apontamentos/apontar'                     => '/controller/ApontamentoController@index',
+    '/apontamentos/apontado'                    => '/controller/ApontamentoController@apontamentoSalvo',
+    '/apontamentos/consulta'                    => '/controller/ApontamentoController@apontamentoConsulta',
+    '/apontamentos/consultaResposta'            => '/controller/ApontamentoController@apontamentoConsultaResposta',
     
-    '/errors/notfound'      => '/errors/NotFound',
+    '/admin'                                    => '/controller/AdminController',
+    '/admin/user/edit'                          => '/controller/AdminController@userEdit',
+    
+    '/errors/notfound'                          => '/errors/NotFound',
 ];
