@@ -6,7 +6,7 @@
         <title>Cadastro de Usuários</title>
     </head>
     <body>
-        <form action="../../controller/LoginController" method="POST" >
+        <form method="POST" >
             <center>
                 Seja bem vindo <b><?php echo $_SESSION[@usuario]; ?></b> a Tela de Cadastro de novo usuários.
                 <fieldset>
