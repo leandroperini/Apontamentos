@@ -13,10 +13,7 @@ Confirmação de cadastro de usuário
                 <tr>
                     <center>
                         <font>Usuário Cadastrado com Sucesso</font>
-                        <?php
-                            print_r($this->db->execute("select * from user"));
-                        ?>
-                        
+                        <input type="button" value="Home" onclick="location. href='/' ">
                     </center>
                 </tr>
             </table>

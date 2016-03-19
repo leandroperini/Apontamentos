@@ -35,8 +35,7 @@
                           <td align="right">Cargo:</td>
                           <td><label for="cargo"></label>
                             <select name="cargo" id="cargo" class="cargo">
-                              <option value="0" selected=""></option>
-                              <option value="1">Estagiário</option>
+                              <option value="1" selected="">Estagiário</option>
                               <option value="7">Montador</option>
                               <option value="22">Técnico</option>
                               <option value="43">Gestor</option>
@@ -63,7 +62,7 @@
                         <tr>
                           <td>&nbsp;</td>
                           <td><input type="reset" name="Limpar" id="Limpar" value="Limpar" /> 
-                              <input type="submit" name="enviar" id="enviar" value="Enviar" /></td>
+                              <input type="submit" name="submit" id="submit" value="Enviar" /></td>
                         </tr>
                       </table>
                 </fieldset>

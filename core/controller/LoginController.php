@@ -28,39 +28,37 @@ class LoginController extends AppController {
           ]);
          * 
          */
-        if (isset($_POST["nome"]) && isset($_POST["user"]) && isset($_POST["senha"])) {
+            
+            if (isset($_POST["nome"]) && isset($_POST["user"]) && isset($_POST["senha"])) {
+                $nome   = $_POST["nome"];
+                $user   = $_POST["user"];
+                $senha  = MD5($_POST["senha"]);
+                $email  = $_POST["email"];
+                $cargo  = $_POST["cargo"];
+                $status = $_POST["status"];
 
-            $nome   = $_POST["nome"];
-            $user   = $_POST["user"];
-            $senha  = $_POST["senha"];
-            $email  = $_POST["email"];
-            $cargo  = $_POST["cargo"];
-            $status = $_POST["status"];
-
-            $resultado = $this->db->execute("INSERT user (nome_user, email_user, cargo_user, senha_user) values (?, ?, ?, ?);", [
-                'values' => [
-                    $user,
-                    $email,
-                    $cargo,
-                    $senha,
-                ],
-                'types'  => [
-                    's',
-                    's',
-                    'i',
-                    's',
-                ],
-            ]);
-
-//if (array_key_exists("submit", $_POST)) {  // Entra se "submit" existe
-            if (isset($_POST['submit'])) {  // Essa linha é equivalente à linha de cima
-                echo $nome, $user, $senha, $email, $cargo, $status;
+                if (isset($_POST["submit"])) {
+                    $resultado = $this->db->execute("INSERT user (nome_user, email_user, cargo_user, senha_user) values (?, ?, ?, ?);", [
+                    'values' => [
+                        $user,
+                        $email,
+                        $cargo,
+                        $senha,
+                    ],
+                    'types'  => [
+                        's',
+                        's',
+                        'i',
+                        's',
+                    ],
+                ]);
                 header('Location: /login/cadastrado');
-            } else {
-// echo "<script language='javascript' type='text/javascript'>alert('Preencha pelo menos um dos campos!');window.location.href='login.html'</script>";
-            }
-        }
+                } else {
+                    echo "<script language='javascript' type='text/javascript'>alert('Preencha pelo menos um dos campos!');window.location.href='login.html'</script>";
+                }
+            } 
     }
+        
 
     public function cadastroSalvo($param) {
         $this->page = 'login/cadastrado';
