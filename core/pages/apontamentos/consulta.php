@@ -8,12 +8,12 @@ Consulta de Apontamentos
         <title>Consultar Apontamento</title>
     </head>
     <body>
-        <form name="consultaapontamentos" action="/apontamentos/consultaResposta">
-            <table border="0">
+        <form method="POST" >
+            <table>
             <tbody>
                 <tr>
                     <td>Por data</td>
-                    <td><input type="date" name="data"></td>
+                    <td><input type="date" name="date"></td>
                 </tr>
                 <tr>
                     <td>Por período</td>
@@ -33,8 +33,8 @@ Consulta de Apontamentos
                     <td><input type="search" name="GestorNome" size="16" maxlength="16"></td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td><input type="reset" name="Limpar" id="Limpar" value="Limpar" /> 
+                    <td><input type="button" value="Home" onclick="location. href='/' "></td>
+                    <td><input type="reset" name="Limpar" id="Limpar" value="Limpar" />
                         <input type="submit" name="enviar" id="enviar" value="Consultar" /></td>
                 </tr>
             </tbody>

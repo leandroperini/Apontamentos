@@ -17,9 +17,8 @@ class Database {
         ],
     ];
 
-    /**
-     *
-     * i corresponding variable has type integer
+    /** 
+      i corresponding variable has type integer
       d	corresponding variable has type double
       s	corresponding variable has type string
       b	corresponding variable is a blob and will be sent in packets
