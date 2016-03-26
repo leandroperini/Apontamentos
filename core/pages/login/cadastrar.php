@@ -1,6 +1,5 @@
 
 <html>
-    
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Cadastro de Usuários</title>
@@ -34,7 +33,7 @@
                         <tr>
                           <td align="right">Cargo:</td>
                           <td><label for="cargo"></label>
-                            <select name="cargo" id="cargo" class="cargo">
+                            <select name="cargo" id="cargo" class="cargo">  
                               <option value="1" selected="">Estagiário</option>
                               <option value="7">Montador</option>
                               <option value="22">Técnico</option>
@@ -60,8 +59,9 @@
                           <td><hr /></td>
                         </tr>
                         <tr>
-                          <td>&nbsp;</td>
+                          <td><input type="button" value="Home" onclick="location. href='/' "></td>
                           <td><input type="reset" name="Limpar" id="Limpar" value="Limpar" /> 
+                              <input type="button" value="Home" onclick="location. href='/' ">
                               <input type="submit" name="submit" id="submit" value="Enviar" /></td>
                         </tr>
                       </table>

@@ -8,12 +8,24 @@
 class LoginController extends AppController {
 
     public function index($param) {
+        
+        $sql = $this->db->execute("SELECT * FROM cargo");
+        
+        $result = mysqli_query($this->db->connect, $sql);
+        
+        while ($row = mysqli_fetch_array($result)) {
+            $cargo = $row['nome_cargo'];
+            
+            echo '<select name="cargo">';
+            echo "<option value='$cargo'>$cargo</option></select>'";
+        }
+        
         $this->page = 'login/login';
     }
 
     public function cadastroNovo($params) {
         $this->page = 'login/cadastrar';
-            
+        
         if (isset($_POST["nome"]) && isset($_POST["user"]) && isset($_POST["senha"])) {
             $nome   = $_POST["nome"];
             $user   = $_POST["user"];

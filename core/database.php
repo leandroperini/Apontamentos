@@ -61,4 +61,13 @@ class Database {
         return $refs;
     }
 
+    function connect($sql = null, array $params = [], $connectionConf = 'sga') {
+        $return    = false;
+        $types     = '';
+        $bindParam = [];
+        
+        $connection = new mysqli($this->db_conf[$connectionConf]['host'], $this->db_conf[$connectionConf]['user'], $this->db_conf[$connectionConf]['pass'], $this->db_conf[$connectionConf]['db']);
+        $stmt->execute();
+    }
+        
 }

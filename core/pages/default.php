@@ -23,6 +23,8 @@
                 <br><a href="apontamentos/consulta">Consultar Apontamento</a><br>
                 <br><a href="apontamentos/consultaResposta">Resposta Consulta Apontamento</a><br>
                 <br><a href="apontamentos/apontado">Apontamento Realizado</a><br>
+                <br>
+                <br><a href="reports/apontamentos_report">Relatório de Apontamentos</a><br>
                 
                 <br>
             </Center>
