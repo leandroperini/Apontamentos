@@ -16,6 +16,7 @@
                 <br><a href="login/">Acesso ao sistema</a><br>
                 <br>
                 <br><a href="login/cadastrar">Cadastrar usuário</a><br>
+                <br><a href="login/recuperarSenha">Recuperar Senha</a><br>
                 <br><a href="login/usuarios">Visualizar usuários</a><br>
                 <br><a href="login/cadastrado">Confirmação de cadastro de usuário</a><br>
                 <br>

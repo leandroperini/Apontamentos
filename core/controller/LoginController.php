@@ -8,19 +8,40 @@
 class LoginController extends AppController {
 
     public function index($param) {
-        
-        $sql = $this->db->execute("SELECT * FROM cargo");
-        
-        $result = mysqli_query($this->db->connect, $sql);
-        
-        while ($row = mysqli_fetch_array($result)) {
-            $cargo = $row['nome_cargo'];
-            
-            echo '<select name="cargo">';
-            echo "<option value='$cargo'>$cargo</option></select>'";
-        }
-        
         $this->page = 'login/login';
+        
+        $user       = $_POST["user"];
+        $password   = $_POST["password"];
+        
+        // Verifica se o usuário digitou o usuário e a senha
+        if (!empty($_POST) AND empty($_POST['user'])) {
+            echo "<script language='javascript' type='text/javascript'>"
+            . "alert('Usuário ou Senha não digitado!');window.location.href='/login'</script>";
+            
+        } 
+        // Se tiver digitado usuário e senha, procede com a validação no banco
+        else {
+            $sql = $this->db->execute("SELECT `nome_user` FROM `user` WHERE `nome_user` = $user");
+             
+            $query = mysqli_query($this->db, $sql);
+            
+            if (mysqli_num_rows($this->db, $query) != 1) {
+            // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
+            echo "<script language='javascript' type='text/javascript'>"
+            . "alert('Usuário não cadastrado, consulte o administrador');"
+                  . "</script>";
+            
+            } else {
+              // Salva os dados encontados na variável $resultado
+              $resultado = mysqli_fetch_assoc($query);
+              
+            }
+        }
+    }
+    
+    public function recuperarSenha($param) {
+        $this->page = 'login/recuperarSenha';
+        
     }
 
     public function cadastroNovo($params) {
