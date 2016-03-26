@@ -102,6 +102,10 @@ Tela de Apontamentos
                                 <label>Evento:</label>
                             </td>
                             <td>
+                                <?php
+                                "@duvida_perini";
+                                // Montar o select apartir com os dados da tabela evento do banco
+                                ?>
                                 <select name="Evento">
                                     <option>Aguardando Atividades</option>
                                     <option>Deslocamento</option>

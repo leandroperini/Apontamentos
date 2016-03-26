@@ -15,6 +15,8 @@
                 <br>
                 <br><a href="login/">Acesso ao sistema</a><br>
                 <br>
+                <br><a href="principal/home/">Tela Home</a><br>
+                <br>
                 <br><a href="login/cadastrar">Cadastrar usuário</a><br>
                 <br><a href="login/recuperarSenha">Recuperar Senha</a><br>
                 <br><a href="login/usuarios">Visualizar usuários</a><br>

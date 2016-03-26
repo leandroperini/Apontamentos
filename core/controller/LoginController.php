@@ -21,10 +21,12 @@ class LoginController extends AppController {
         } 
         // Se tiver digitado usuário e senha, procede com a validação no banco
         else {
+            "@duvida_perini";
             $sql = $this->db->execute("SELECT `nome_user` FROM `user` WHERE `nome_user` = $user");
              
             $query = mysqli_query($this->db, $sql);
             
+            "@duvida_perini";
             if (mysqli_num_rows($this->db, $query) != 1) {
             // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
             echo "<script language='javascript' type='text/javascript'>"
@@ -34,7 +36,7 @@ class LoginController extends AppController {
             } else {
               // Salva os dados encontados na variável $resultado
               $resultado = mysqli_fetch_assoc($query);
-              
+              "@duvida_perini";
             }
         }
     }

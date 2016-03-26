@@ -2,7 +2,7 @@
 
 $ROUTES = [
     '/'                                         => '/controller/MainController@index',
-    '/home'                                     => '/controller/MainController@index',
+    '/principal/home'                           => '/controller/MainController@home',
     
     '/login'                                    => '/controller/LoginController@index',
     '/login/recuperarSenha'                     => '/controller/LoginController@recuperarSenha',
