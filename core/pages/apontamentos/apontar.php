@@ -103,7 +103,7 @@ Tela de Apontamentos
                             </td>
                             <td>
                                 <?php
-                                "@duvida_perini";
+//                                "@duvida_perini";
                                 // Montar o select apartir com os dados da tabela evento do banco
                                 ?>
                                 <select name="Evento">

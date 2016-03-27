@@ -17,11 +17,16 @@ class Database {
         ],
     ];
 
-    /** 
-      i corresponding variable has type integer
-      d	corresponding variable has type double
-      s	corresponding variable has type string
-      b	corresponding variable is a blob and will be sent in packets
+    /**
+     * Executa uma determinada query SQL fazendo bind das variáveis para bancos mysql.
+     * i corresponding variable has type integer
+     * d corresponding variable has type double
+     * s corresponding variable has type string
+     * b corresponding variable is a blob and will be sent in packets
+     * @param string $sql
+     * @param array $params
+     * @param string $connectionConf
+     * @return mixed Mensagem de erro em String ou conteúdo do select ou true caso comando SQL não gere retorno
      */
     function execute($sql = null, array $params = [], $connectionConf = 'sga') {
         $return    = false;
@@ -45,7 +50,11 @@ class Database {
                 call_user_func_array([$stmt, 'bind_param'], $this->refValues($bindParam));
             }
             $stmt->execute();
-            $return = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            if (!is_bool($stmt->get_result())) {
+                $return = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            } else {
+                $return = $stmt->error;
+            }
         } catch (Exception $exc) {
             throw Exception;
         } finally {
@@ -59,5 +68,6 @@ class Database {
         foreach ($arr as $key => $value)
             $refs[$key] = &$arr[$key];
         return $refs;
-    }   
+    }
+
 }
