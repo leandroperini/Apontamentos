@@ -15,10 +15,7 @@ $ROUTES = [
     '/apontamentos/consulta'                    => '/controller/ApontamentoController@apontamentoConsulta',
     '/apontamentos/consultaResposta'            => '/controller/ApontamentoController@apontamentoConsultaResposta',
     
-    '/reports/apontamentos_report'           => '/controller/ReportController@index',
-    
-    '/admin'                                    => '/controller/AdminController',
-    '/admin/user/edit'                          => '/controller/AdminController@userEdit',
+    '/reports/apontamentos_report'              => '/controller/ReportController@index',
     
     '/errors/notfound'                          => '/errors/NotFound',
     

@@ -10,6 +10,8 @@ class LoginController extends AppController {
     public function index($param) {
         $this->page = 'login/login';
         
+        /*
+         * 
         $user       = $_POST["user"];
         $password   = $_POST["password"];
         
@@ -39,6 +41,8 @@ class LoginController extends AppController {
 //              "@duvida_perini"; não há necessidade de manipular o retorno do select, a função db->execute() já retorna o valor pronto para ser usado.
             }
         }
+         * 
+         */
     }
     
     public function recuperarSenha($param) {

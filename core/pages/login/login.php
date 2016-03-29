@@ -34,8 +34,7 @@
                                     <tr>
                                         <td><a href="" ><img title="" alt="" src="../../../webroot/assets/imagens/chave.ico" /></a></td>
                                         <td width=20%><input value="Acessar sistema" type="submit"/>
-                                            <br><br><a href="login/recuperarSenha">Recuperar senha</a>
-                                            <br><a href="login/cadastrar">Solicitar acesso</a>
+                                            <br><br><a href="login/recuperarSenha">Redefinir senha</a>
                                     </tr>
                                 </table>
                             </fieldset>
