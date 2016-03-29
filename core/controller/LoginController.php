@@ -93,8 +93,6 @@ class LoginController extends AppController {
 
     public function usuarios($param) {
         $this->page = 'login/usuarios';
-        
-        "@duvida_SELECT_perini";
         print_r($this->db->execute("SELECT * FROM user"));
     }
 

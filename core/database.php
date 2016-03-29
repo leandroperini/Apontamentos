@@ -34,8 +34,7 @@ class Database {
         $bindParam = [];
         try {
             $connection = new mysqli($this->db_conf[$connectionConf]['host'], $this->db_conf[$connectionConf]['user'], $this->db_conf[$connectionConf]['pass'], $this->db_conf[$connectionConf]['db']);
-
-            $stmt = $connection->prepare($sql);
+            $stmt       = $connection->prepare($sql);
             if (!empty(@$params['types']) && !empty(@$params['values'])) {
                 foreach (@$params['types'] as $type) {
                     $types .= $type;
@@ -50,10 +49,12 @@ class Database {
                 call_user_func_array([$stmt, 'bind_param'], $this->refValues($bindParam));
             }
             $stmt->execute();
-            if (!is_bool($stmt->get_result())) {
-                $return = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            $result = NULL;
+            $result = $stmt->get_result();
+            if ($result !== FALSE && $result !== TRUE) {
+                $return = $result->fetch_all();
             } else {
-                $return = $stmt->error;
+                $return = $stmt->error . ' - ' . $connection->info;
             }
         } catch (Exception $exc) {
             throw Exception;
