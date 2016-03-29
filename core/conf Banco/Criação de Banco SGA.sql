@@ -171,6 +171,7 @@ INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('José Márcio');
 
 INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('Tárcio Lima', 'tarcio@ensel.com.br', '100', MD5('123')); 
 INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('Maro Lopes', 'maro@ensel.com.br', '100', MD5('123'));
+INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('teste', 'teste@teste.com.br', '1', '123');
 
 -- -----------------------------------------------------
 -- Data for table 'apontamento'

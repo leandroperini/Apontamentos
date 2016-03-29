@@ -79,8 +79,8 @@ class LoginController extends AppController {
             header('Location: /login/cadastrado');
             } else {
                 echo "<script language='javascript' type='text/javascript'>alert('Preencha pelo menos um dos campos!');window.location.href='login.html'</script>";
-            }
-        } 
+            }   
+        }
     }
         
 
