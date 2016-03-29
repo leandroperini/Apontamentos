@@ -8,6 +8,7 @@
 class LoginController extends AppController {
 
     public function index($param) {
+        
         $this->page = 'login/login';
         
         /*
@@ -47,7 +48,7 @@ class LoginController extends AppController {
     
     public function recuperarSenha($param) {
         $this->page = 'login/recuperarSenha';
-        
+
     }
 
     public function cadastroNovo($params) {
@@ -62,18 +63,20 @@ class LoginController extends AppController {
             $status = $_POST["status"];
 
             if (isset($_POST["submit"])) {
-                $resultado = $this->db->execute("INSERT user (nome_user, email_user, cargo_user, senha_user) values (?, ?, ?, ?);", [
+                $resultado = $this->db->execute("INSERT user (nome_user, email_user, cargo_user, senha_user, status_user) values (?, ?, ?, ?, ?);", [
                 'values' => [
                     $user,
                     $email,
                     $cargo,
                     $senha,
+                    $status,
                 ],
                 'types'  => [
                     's',
                     's',
                     'i',
                     's',
+                    'i',
                 ],
             ]);
             header('Location: /login/cadastrado');
@@ -90,6 +93,9 @@ class LoginController extends AppController {
 
     public function usuarios($param) {
         $this->page = 'login/usuarios';
+        
+        "@duvida_SELECT_perini";
+        print_r($this->db->execute("SELECT * FROM user"));
     }
 
 }

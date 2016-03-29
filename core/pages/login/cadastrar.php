@@ -35,11 +35,12 @@
                           <td><label for="cargo"></label>
                             <select name="cargo" id="cargo" class="cargo">  
                               <option value="1" selected="">Estagiário</option>
-                              <option value="7">Montador</option>
-                              <option value="22">Técnico</option>
-                              <option value="43">Gestor</option>
-                              <option value="53">Staff</option>
-                              <option value="6">Coordenador</option>
+                              <option value="2">Montador</option>
+                              <option value="3">Técnico</option>
+                              <option value="5">Gestor</option>
+                              <option value="6">Staff</option>
+                              <option value="7">Consulta</option>
+                              <option value="8">Coordenador</option>
                               <option value="100">Administrador</option>
                             </select></td>
                         </tr>
