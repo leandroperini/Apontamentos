@@ -8,7 +8,6 @@
 class LoginController extends AppController {
 
     public function index($param) {
-        
         $this->page = 'login/login';
         
         /*
@@ -85,7 +84,6 @@ class LoginController extends AppController {
             }   
         }
     }
-        
 
     public function cadastroSalvo($param) {
         $this->page = 'login/cadastrado';
@@ -93,7 +91,11 @@ class LoginController extends AppController {
 
     public function usuarios($param) {
         $this->page = 'login/usuarios';
-        print_r($this->db->execute("SELECT * FROM user"));
+        
+        //print_r($this->db->execute("SELECT * FROM user"));
+        $query = $this->db->execute("SELECT * FROM user");
+        $variavel = mysqli_fetch_row($query);
+        var_dump($variavel);
     }
 
 }

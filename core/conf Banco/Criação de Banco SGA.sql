@@ -133,6 +133,9 @@ INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Consulta', 
 INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Coordenador', 'Coordenador');
 INSERT INTO `sga`.`cargo` (`id_cargo`, `nome_cargo`, `permissao_cargo`) VALUES ('100', 'Administrador', 'Root');
 
+-- -----------------------------------------------------
+-- Data for table 'evento'
+-- -----------------------------------------------------
 INSERT INTO `sga`.`evento` (`nome_evento`) VALUES ('Aguardando atividades');
 INSERT INTO `sga`.`evento` (`nome_evento`) VALUES ('Improdutividade Ensel');
 INSERT INTO `sga`.`evento` (`nome_evento`) VALUES ('Improdutividade Cliente');
@@ -154,6 +157,9 @@ INSERT INTO `sga`.`evento` (`nome_evento`) VALUES ('Intervalo de Janta');
 INSERT INTO `sga`.`evento` (`nome_evento`) VALUES ('Intervalo entre turnos');
 INSERT INTO `sga`.`evento` (`nome_evento`) VALUES ('Descanso Remunerado');
 
+-- -----------------------------------------------------
+-- Data for table 'gestor'
+-- -----------------------------------------------------
 INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('Anderson Luis');
 INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('André Luis');
 INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('Alex Diogo');
@@ -169,6 +175,9 @@ INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('Thiago Pessoa');
 INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('Gerson Severino');
 INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('José Márcio');
 
+-- -----------------------------------------------------
+-- Data for table 'user'
+-- -----------------------------------------------------
 INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('Tárcio Lima', 'tarcio@ensel.com.br', '100', MD5('123')); 
 INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('Maro Lopes', 'maro@ensel.com.br', '100', MD5('123'));
 INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('teste', 'teste@teste.com.br', '1', '123');
@@ -196,9 +205,5 @@ VALUES ('1', '2016-03-28', '13:00:00', '17:00:00', 'SPO ABC', '1000-16', '1', 'I
 INSERT INTO `sga`.`apontamento` (`user_apontamento`, `data_apontamento`, `hr_ini_apontamento`, `hr_fim_apontamento`, `site_apontamento`, `os_apontamento`, 
 `evento_apontamento`, `descricao_apontamento`, `veiculo_apontamento`, `gestor_apontamento`, `obs_apontamento`) 
 VALUES ('1', '2016-03-28', '17:00:00', '18:00:00', 'SPO ABC', '2222-16', '4', 'Deslocamento do site SPO ABC para a ENSEL', 'HIG 8700', '2', 'Trânsito congestionado no trajeto');
-
--- -----------------------------------------------------
--- Data for table 'apontamento'
--- -----------------------------------------------------
 
 COMMIT;
