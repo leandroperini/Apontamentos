@@ -85,14 +85,14 @@ CREATE TABLE IF NOT EXISTS `sga`.`apontamento` (
   `hr_ini_apontamento` TIME NOT NULL,
   `hr_fim_apontamento` TIME NOT NULL,
   `site_apontamento` VARCHAR(45) NOT NULL,
-  `os_apontamento` INT NULL,
+  `os_apontamento` VARCHAR(45) NOT NULL,
   `evento_apontamento` INT NULL,
   `descricao_apontamento` VARCHAR(500) NOT NULL,
   `veiculo_apontamento` VARCHAR(45) NULL,
   `gestor_apontamento` INT NULL,
   `obs_apontamento` VARCHAR(500) NULL,
   `data_registro_apontamento` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data e hora da criação do apontamento',
-  PRIMARY KEY (`id_apontamento`, `gestor_apontamento`, `operadora_apontamento`, `evento_apontamento`, `user_apontamento`),
+  PRIMARY KEY (`id_apontamento`, `gestor_apontamento`, `evento_apontamento`, `user_apontamento`),
   UNIQUE INDEX `id_apontamento_UNIQUE` (`id_apontamento` ASC),
   INDEX `os_apontamento_idx` (`evento_apontamento` ASC),
   INDEX `os_apontamento_idx1` (`gestor_apontamento` ASC),
@@ -172,5 +172,32 @@ INSERT INTO `sga`.`gestor` (`nome_gestor`) VALUES ('José Márcio');
 INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('Tárcio Lima', 'tarcio@ensel.com.br', '100', MD5('123')); 
 INSERT INTO `sga`.`user` (`nome_user`, `email_user`, `cargo_user`, `senha_user`) VALUES ('Maro Lopes', 'maro@ensel.com.br', '100', MD5('123'));
 
-COMMIT;
+-- -----------------------------------------------------
+-- Data for table 'apontamento'
+-- -----------------------------------------------------
+INSERT INTO `sga`.`apontamento` (`user_apontamento`, `data_apontamento`, `hr_ini_apontamento`, `hr_fim_apontamento`, `site_apontamento`, `os_apontamento`, 
+`evento_apontamento`, `descricao_apontamento`, `veiculo_apontamento`, `gestor_apontamento`, `obs_apontamento`) 
+VALUES ('1', '2016-03-28', '08:00:00', '10:00:00', 'SPO ABC', '2222-16', '4', 'Deslocamento da ENSEL para o site SPO ABC', 'HIG 8700', '2', 'Trânsito lento');
 
+INSERT INTO `sga`.`apontamento` (`user_apontamento`, `data_apontamento`, `hr_ini_apontamento`, `hr_fim_apontamento`, `site_apontamento`, `os_apontamento`, 
+`evento_apontamento`, `descricao_apontamento`, `veiculo_apontamento`, `gestor_apontamento`, `obs_apontamento`) 
+VALUES ('1', '2016-03-28', '10:00:00', '12:00:00', 'SPO ABC', '1000-16', '1', 'Instalação de Equipamento CISCO', 'HIG 8700', '2', 
+'Não foi possível finalizar a instalação.');
+
+INSERT INTO `sga`.`apontamento` (`user_apontamento`, `data_apontamento`, `hr_ini_apontamento`, `hr_fim_apontamento`, `site_apontamento`, `os_apontamento`, 
+`evento_apontamento`, `descricao_apontamento`, `veiculo_apontamento`, `gestor_apontamento`, `obs_apontamento`) 
+VALUES ('1', '2016-03-28', '12:00:00', '13:00:00', 'SPO ABC', '1000-16', '17', 'Intervalo almoço', 'HIG 8700', '2', 'Intervalo almoço');
+
+INSERT INTO `sga`.`apontamento` (`user_apontamento`, `data_apontamento`, `hr_ini_apontamento`, `hr_fim_apontamento`, `site_apontamento`, `os_apontamento`, 
+`evento_apontamento`, `descricao_apontamento`, `veiculo_apontamento`, `gestor_apontamento`, `obs_apontamento`) 
+VALUES ('1', '2016-03-28', '13:00:00', '17:00:00', 'SPO ABC', '1000-16', '1', 'Instalação de Equipamento CISCO', 'HIG 8700', '2', 'Instalação finalizada.');
+
+INSERT INTO `sga`.`apontamento` (`user_apontamento`, `data_apontamento`, `hr_ini_apontamento`, `hr_fim_apontamento`, `site_apontamento`, `os_apontamento`, 
+`evento_apontamento`, `descricao_apontamento`, `veiculo_apontamento`, `gestor_apontamento`, `obs_apontamento`) 
+VALUES ('1', '2016-03-28', '17:00:00', '18:00:00', 'SPO ABC', '2222-16', '4', 'Deslocamento do site SPO ABC para a ENSEL', 'HIG 8700', '2', 'Trânsito congestionado no trajeto');
+
+-- -----------------------------------------------------
+-- Data for table 'apontamento'
+-- -----------------------------------------------------
+
+COMMIT;
