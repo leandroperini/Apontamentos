@@ -52,7 +52,7 @@ class Database {
             $result = NULL;
             $result = $stmt->get_result();
             if ($result !== FALSE && $result !== TRUE) {
-                $return = $result->fetch_all();
+                $return = $result->fetch_all(MYSQLI_ASSOC);
             } else {
                 $return = $stmt->error . ' - ' . $connection->info;
             }
