@@ -1,3 +1,7 @@
 log/access-apontamentos.log
 log/error-apontamentos.log
+<<<<<<< Updated upstream
 /template/gentelella-master/nbproject/private/
+=======
+nbproject/private/private.xml
+>>>>>>> Stashed changes
