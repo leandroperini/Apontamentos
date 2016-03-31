@@ -1,17 +1,11 @@
 
-<html>
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Acesse o SGA</title>
-    </head>
-<body>
-    <Center>
-        <h1>
-            <font face="verdana" size="5" color="blue">.::</font>
-            <font face="verdana" size="5" color="">Bem vindo ao</font>
-            <font face="verdana" size="5" color="red">SGA - Sistema de Gerenciamento de Apontamentos </font>
-            <font face="verdana" size="5" color="blue">::.</font>
-        </h1>
+<Center>
+    <h1>
+        <font face="verdana" size="5" color="blue">.::</font>
+        <font face="verdana" size="5" color="">Bem vindo ao</font>
+        <font face="verdana" size="5" color="red">SGA - Sistema de Gerenciamento de Apontamentos </font>
+        <font face="verdana" size="5" color="blue">::.</font>
+    </h1>
     <form method="POST">
         <div>
             <font face="verdana" size="3" color="blue">Digite suas credenciais para acessar o banco de dados.</font>
@@ -32,7 +26,7 @@
                                         <td><input name="password" type="password"/></td>
                                     </tr>
                                     <tr>
-                                        <td><a href="" ><img title="" alt="" src="../../../webroot/assets/imagens/chave.ico" /></a></td>
+                                        <td><a href="" ><img title="" alt="" src="/assets/imagens/chave.ico" /></a></td>
                                         <td width=20%><input value="Acessar sistema" type="submit"/>
                                             <br><br><a href="login/recuperarSenha">Redefinir senha</a>
                                     </tr>
@@ -45,5 +39,3 @@
         </div>
         <br>
     </form>
-</body>
-</html>

@@ -14,6 +14,7 @@
 class AppController {
 
     public $page = 'default';
+    public $layout = 'default';
     public $db   = null;
 
     public function __construct() {

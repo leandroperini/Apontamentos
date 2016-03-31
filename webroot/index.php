@@ -14,25 +14,29 @@ if (!empty($route) && $route != '/errors/NotFound') {
     }
     @$class = end(explode('/', $classPath));
     try {
-        include_once '../core' . $classPath . '.php';
+        include_once (dirname(__FILE__) . '/' . '../core' . $classPath . '.php');
         $class = new $class;
         $class->$method($params);
 
-        $page = '../core/pages/default.php';
-        $page = $class->page? : $page;
-        include_once '../core/pages/' . $page . '.php';
+        $page   = 'default';
+        $page   = $class->page? : $page;
+        $layout = 'default';
+        $layout = $class->layout? : $layout;
+        include_once (dirname(__FILE__) . '/' . "../core/pages/layouts/$layout.php");
     } catch (Exception $exc) {
         echo $exc->getMessage();
     } finally {
         die;
     }
 } elseif ($route == '/errors/NotFound') {
-    include_once '../core/errors/NotFound.php';
-    $class = new NotFound;
+    include_once (dirname(__FILE__) . '/' . '../core/errors/NotFound.php');
+    $class  = new NotFound;
     $class->index($params);
-    $page  = '../core/pages/default.php';
-    $page  = $class->page? : $page;
-    include_once '../core/pages/' . $page . '.php';
+    $page   = 'default';
+    $page   = $class->page? : $page;
+    $layout = 'default';
+    $layout = $class->layout? : $layout;
+    include_once (dirname(__FILE__) . '/' . "../core/pages/layouts/$layout.php");
     die;
 } else {
     Header("location: /errors/notfound");

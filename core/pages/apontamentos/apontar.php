@@ -21,7 +21,7 @@ Tela de Apontamentos
                     <td align="right">
                         <span id="clock" ></span>
                         <script>setTimeout("data_hora()",10);</script>
-                        <script type="text/javascript" src="../../../webroot/assets/js/data_hora.js"></script>
+                        <script type="text/javascript" src="/assets/js/data_hora.js"></script>
                         <font face="verdana" size="" color="red">error Java Script time</font>
                     </td>
                 </tr>
