@@ -7,8 +7,11 @@
             <file>file:/C:/xampp/htdocs/Apontamentos/core/controller/LoginController.php</file>
             <file>file:/C:/xampp/htdocs/Apontamentos/core/database.php</file>
             <file>file:/C:/xampp/htdocs/Apontamentos/webroot/index.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/controller/MainController.php</file>
             <file>file:/C:/xampp/htdocs/Apontamentos/core/routes.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/login/cadastrar.php</file>
             <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/principal/home.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/login/login.php</file>
         </group>
     </open-files>
 </project-private>
