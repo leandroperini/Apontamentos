@@ -8,6 +8,7 @@
 class LoginController extends AppController {
 
     public function index($param) {
+        $this->layout = 'empty';
         $this->page = 'login/login';
         
         /*
@@ -52,7 +53,9 @@ class LoginController extends AppController {
 
     public function cadastroNovo($params) {
         
+        // Busca dos cargos no banco de bados
         $query = $this->db->execute("SELECT * FROM cargo");
+        // Atribui os valores da conulta para passagem para a view
         $this->cargosUsuarios = $query;
         
         $this->page = 'login/cadastrar';

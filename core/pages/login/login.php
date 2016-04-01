@@ -1,54 +1,4 @@
 
-
-<!-- Custom styling plus plugins 
-<link href="/assets/gentelella-master/production/css/custom.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/icheck/flat/green.css" rel="stylesheet">
-<!-- editor 
-<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/editor/external/google-code-prettify/prettify.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/editor/index.css" rel="stylesheet">
-<!-- select2 
-<link href="/assets/gentelella-master/production/css/select/select2.min.css" rel="stylesheet">
-<!-- switchery
-<link rel="stylesheet" href="/assets/gentelella-master/production/css/switchery/switchery.min.css" />
-
-<div>
-        <Center>
-            <h1>
-                <font face="verdana" size="5" color="blue">.::</font>
-                <font face="verdana" size="5" color="">Bem vindo ao</font>
-                <font face="verdana" size="5" color="red">SGA - Sistema de Gerenciamento de Apontamentos </font>
-                <font face="verdana" size="5" color="blue">::.</font>
-                <br><br>
-                <font face="verdana" size="3" color="blue">Digite suas credenciais para acessar o banco de dados.</font>
-            </h1>
-        </center>
-    </div>
-
-<div class="x_panel">
-        <form method="POST">
-            <br>
-                <table>
-                    <tr>
-                        <td width=2%><font>Usuário:</font></td>
-                        <td><input name="user" type="text"/></td>
-                    </tr>
-                    <tr>
-                        <td width=2%><font>Senha:</font></td>
-                        <td><input name="password" type="password"/></td>
-                    </tr>
-                    <tr>
-                        <td><a href="" ><img title="" alt="" src="/assets/imagens/chave.ico" /></a></td>
-                        <td width=20%><input value="Acessar sistema" type="submit"/>
-                            <br><br><a href="login/recuperarSenha">Redefinir senha</a>
-                    </tr>
-                </table>
-        </form>
-</div>
--->
-
-<!DOCTYPE html>
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
@@ -82,7 +32,7 @@
 
 </head>
 
-<body style="background:#F7F7F7;">
+<body>
 
   <div class="">
     <a class="hiddenanchor" id="toregister"></a>

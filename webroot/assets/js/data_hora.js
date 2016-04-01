@@ -24,7 +24,7 @@ if  ((document.getElementById) && window.addEventListener || window.attachEvent)
             minutes="0"+minutes;
         if (seconds<=9)
             seconds="0"+seconds;
-        var cdate="<b><font color=#ff0000 face=arial size=2>"+dia+" / "+mes+" / "+ano+" - "+hours+":"+minutes+":"+seconds+" "+" - </font>";
+        var cdate="<b><font color=#ff0000 face=arial size=2>"+dia+" / "+mes+" / "+ano+" - "+hours+":"+minutes+":"+seconds+" "+" </font>";
         clock.innerHTML= cdate;
         setTimeout("data_hora()",1000);
     }

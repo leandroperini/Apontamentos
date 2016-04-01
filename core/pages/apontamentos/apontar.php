@@ -2,12 +2,7 @@
 <!--
 Tela de Apontamentos
 -->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Cadastro de Apontamentos</title>
-    </head>
-    <body>
+
         <fieldset>
             <table width="100%">
                 <tr>
@@ -22,7 +17,6 @@ Tela de Apontamentos
                         <span id="clock" ></span>
                         <script>setTimeout("data_hora()",10);</script>
                         <script type="text/javascript" src="/assets/js/data_hora.js"></script>
-                        <font face="verdana" size="" color="red">error Java Script time</font>
                     </td>
                 </tr>
             </table>
@@ -32,7 +26,7 @@ Tela de Apontamentos
             <form action="/apontamentos/apontado" method="POST">
                 <!-- DESCRIÇÃO DA ATIVIDADE-->
                 <fieldset>
-                 <legend>Novo Apontamento</legend>
+                 <legend align="center">Novo Apontamento</legend>
                     <table cellspacing="10">
                         <tr>
                             <td>
@@ -107,19 +101,10 @@ Tela de Apontamentos
                                 // Montar o select apartir com os dados da tabela evento do banco
                                 ?>
                                 <select name="Evento">
-                                    <option>Aguardando Atividades</option>
-                                    <option>Deslocamento</option>
-                                    <option>Improdutividade Ensel</option>
-                                    <option>Improdutividade Cliente</option>
-                                    <option>Vistoria</option>
-                                    <option>Recebimento de Material</option>
-                                    <option>Instalação</option>
-                                    <option>Teste</option>
-                                    <option>Aceitação</option>
-                                    <option>Documentação</option>
-                                    <option>Compensação</option>
-                                    <option>Falta</option>
-                                    <option>Atestado</option>
+                                    <option value="">Selecione...</option>
+                                    <?php foreach ($class->eventosApontamento as $key => $eventosApontamento) : ?>
+                                    <?php echo("<option value='".$eventosApontamento['id_evento']."'>".$eventosApontamento['nome_evento']."</option>"); ?>
+                        <?php endforeach; ?>
                                 </select>
                             </td>
                         </tr>
@@ -166,5 +151,3 @@ Tela de Apontamentos
                 
             </form>
         </div>
-    </body>
-</html>

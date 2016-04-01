@@ -3,6 +3,7 @@
 <link href="/assets/gentelella-master/production/css/custom.css" rel="stylesheet">
 <link href="/assets/gentelella-master/production/css/icheck/flat/green.css" rel="stylesheet">
 <!-- editor -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
 <link href="/assets/gentelella-master/production/css/editor/external/google-code-prettify/prettify.css" rel="stylesheet">
 <link href="/assets/gentelella-master/production/css/editor/index.css" rel="stylesheet">
 <!-- select2 -->
@@ -68,20 +69,15 @@
                         <input type="text" id="senha" name="senha" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                     </div>
-                      
+                         
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Cargo</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <select id="cargo" name="cargo" class="form-control" required>
-                                <option value="">Selecione..</option>
-                                <option value="1">Estagiário</option>
-                                <option value="2">Montador</option>
-                                <option value="3">Técnico</option>
-                                <option value="5">Gestor</option>
-                                <option value="6">Staff</option>
-                                <option value="7">Consulta</option>
-                                <option value="8">Coordenador</option>
-                                <option value="100">Administrador</option>
+                                <option value="">Selecione...</option>
+                                <?php foreach ($class->cargosUsuarios as $key => $cargosUsuarios) : ?>
+                                    <?php echo("<option value='".$cargosUsuarios['id_cargo']."'>".$cargosUsuarios['nome_cargo']."</option>"); ?>
+                        <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
