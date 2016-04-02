@@ -45,16 +45,16 @@
     <div id="wrapper">
       <div id="login" class="animate form">
         <section class="login_content">
-          <form>
+            <form method="POST">
             <h1>Login</h1>
             <div>
-              <input type="text" class="form-control" placeholder="Usuário" required="" />
+                <input type="text" name="user" id="user" class="form-control" placeholder="Usuário" required="" />
             </div>
             <div>
-              <input type="password" class="form-control" placeholder="Senha" required="" />
+              <input type="password" name="password" id="password" class="form-control" placeholder="Senha" required="" />
             </div>
             <div>
-              <a class="btn btn-default submit" href="/">Acessar</a>
+              <button type="submit" name="submit" id="submit" class="btn btn-success">Acessar</button>
               <a href="#toregister" class="to_register"> Recuperar senha </a>
             </div>
             <div class="clearfix"></div>
@@ -72,6 +72,7 @@
         </section>
         <!-- content -->
       </div>
+        
       <div id="register" class="animate form">
         <section class="login_content">
           <form>

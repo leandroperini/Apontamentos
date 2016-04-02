@@ -8,42 +8,39 @@
 class LoginController extends AppController {
 
     public function index($param) {
-        $this->layout = 'empty';
         $this->page = 'login/login';
         
-        /*
-         * 
-        $user       = $_POST["user"];
-        $password   = $_POST["password"];
+        //$password   = $_POST["password"];
         
-        // Verifica se o usuário digitou o usuário e a senha        
-        if (!empty($_POST) && empty($_POST['user'])) {//Não use AND use &&
-            echo "<script language='javascript' type='text/javascript'>"
-            . "alert('Usuário ou Senha não digitado!');window.location.href='/login'</script>";
+        // Verifica se o usuário digitou o usuário e a senha   
+         if (isset($_POST) && isset($_POST["user"])) {
+            $usuario   = $_POST["user"];
             
-        } 
-        // Se tiver digitado usuário e senha, procede com a validação no banco
-        else {
-//            "@duvida_perini"; estava dando erro porque o banco tava dando erro de constraint, alguma chave está errada
-//            ajustei para a função db->execute exibir a mensagem de erro quando der erro
-            $sql = $this->db->execute("SELECT `nome_user` FROM `user` WHERE `nome_user` = $user");
-             
-//            $query = mysqli_query($this->db, $sql); não é necessário a função db->execute já executa e retorna o valor, o que acontecia é que dava erro e tetornava false;
-//            "@duvida_perini";
-            if (mysqli_num_rows($this->db, $query) != 1) {
-            // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
-            echo "<script language='javascript' type='text/javascript'>"
-            . "alert('Usuário não cadastrado, consulte o administrador');"
-                  . "</script>";
-            
-            } else {
-              // Salva os dados encontados na variável $resultado
-              $resultado = mysqli_fetch_assoc($query);
-//              "@duvida_perini"; não há necessidade de manipular o retorno do select, a função db->execute() já retorna o valor pronto para ser usado.
+            if (isset($_POST["submit"])) { // Verifica se houve submit
+                $sql = $this->db->execute("SELECT nome_user FROM user WHERE nome_user = $usuario");
+                
+                $userBanco = $sql['nome_user'];
+                
+                print_r($sql);
+                
+                /*
+                $userBanco = $sql['nome_user'];
+                echo $userBanco;
+                                
+                if ($userBanco == $usuario){
+                    header('Location: /principal/home');
+                }
+                else{
+                    echo "Login inválido!";
+                    
+                }
+                 * 
+                 */  
             }
-        }
-         * 
-         */
+            else {
+                echo "<script language='javascript' type='text/javascript'>alert('Preencha pelo menos um dos campos!');window.location.href='login.html'</script>";
+            }
+         }
     }
     
     public function recuperarSenha($param) {
@@ -52,7 +49,6 @@ class LoginController extends AppController {
     }
 
     public function cadastroNovo($params) {
-        
         // Busca dos cargos no banco de bados
         $query = $this->db->execute("SELECT * FROM cargo");
         // Atribui os valores da conulta para passagem para a view
