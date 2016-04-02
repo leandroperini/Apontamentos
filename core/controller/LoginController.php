@@ -10,32 +10,33 @@ class LoginController extends AppController {
     public function index($param) {
         $this->page = 'login/login';
         
-        //$password   = $_POST["password"];
-        
         // Verifica se o usuário digitou o usuário e a senha   
          if (isset($_POST) && isset($_POST["user"])) {
-            $usuario   = $_POST["user"];
             
             if (isset($_POST["submit"])) { // Verifica se houve submit
-                $sql = $this->db->execute("SELECT nome_user FROM user WHERE nome_user = $usuario");
+                $usuario   = $_POST["user"];
+                $senha   = MD5($_POST["password"]);
+                $contUser = 0; // Variável de contagem de usuário
                 
-                $userBanco = $sql['nome_user'];
+                $sql = $this->db->execute("SELECT nome_user FROM user "
+                                        . "WHERE nome_user = '$usuario' && senha_user = '$senha'");
                 
-                print_r($sql);
+                // Varre a tabela de Usuários e incrementa em 1 a variável $contUser, sinalizando que o usuário existe
+                foreach ($sql as $key) {
+                    $contUser = $contUser + 1;
+                }
                 
-                /*
-                $userBanco = $sql['nome_user'];
-                echo $userBanco;
-                                
-                if ($userBanco == $usuario){
+                if ($contUser == 1){ // Se variável $contUser = 1, usuário digitado coincide com o banco
                     header('Location: /principal/home');
+                    session_start();
+                    $login = $_SESSION['$usuario'];
+                    $valida = $_SESSION[@validacao];
+                    $user = $_SESSION[@usuario];
                 }
                 else{
-                    echo "Login inválido!";
-                    
+                    echo "<script language='javascript' type='text/javascript'>alert('Login inválido! Verifique seu usuário e senha.');"
+                    . "window.location.href='/login'</script>";
                 }
-                 * 
-                 */  
             }
             else {
                 echo "<script language='javascript' type='text/javascript'>alert('Preencha pelo menos um dos campos!');window.location.href='login.html'</script>";
