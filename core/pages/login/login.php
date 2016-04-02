@@ -17,29 +17,18 @@
   <link href="/assets/gentelella-master/production/css/custom.css" rel="stylesheet">
   <link href="/assets/gentelella-master/production/css/icheck/flat/green.css" rel="stylesheet">
 
-
   <script src="js/jquery.min.js"></script>
-
-  <!--[if lt IE 9]>
-        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
-        <![endif]-->
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
 </head>
 
-<body>
+<body style="background:#F7F7F7;">
 
   <div class="">
     <a class="hiddenanchor" id="toregister"></a>
     <a class="hiddenanchor" id="tologin"></a>
     
     <h1>
-        <center>.:: SGA - Sistema de Gerenciamento de Apontamentos ::.</center>
+        .:: SGA - Sistema de Gerenciamento de Apontamentos ::.
     </h1>
     
     <div id="wrapper">
