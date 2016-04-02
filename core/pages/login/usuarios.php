@@ -1,5 +1,18 @@
 
-<Center>
+<!-- Custom styling plus plugins -->
+<link href="/assets/gentelella-master/production/css/custom.css" rel="stylesheet">
+<link href="/assets/gentelella-master/production/css/icheck/flat/green.css" rel="stylesheet">
+<!-- editor -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+<link href="/assets/gentelella-master/production/css/editor/external/google-code-prettify/prettify.css" rel="stylesheet">
+<link href="/assets/gentelella-master/production/css/editor/index.css" rel="stylesheet">
+<!-- select2 -->
+<link href="/assets/gentelella-master/production/css/select/select2.min.css" rel="stylesheet">
+<!-- switchery -->
+<link rel="stylesheet" href="/assets/gentelella-master/production/css/switchery/switchery.min.css" />
+        
+    <body>
+    <Center>
     <div class="x_panel">
         <div class="x_title">
             <h2>Lista de Usuários</h2>            
@@ -26,7 +39,7 @@
                     -->
                     <?php foreach ($class->usuariosCadastrados as $key => $usuarioCadastrado) : ?>
                     <tr>
-                            <td><?php echo $usuarioCadastrado['codigo_user'] ?></td>
+                            <td><?php echo $usuarioCadastrado['id_user'] ?></td>
                             <td><?php echo $usuarioCadastrado['nome_user'] ?></td>
                             <?php if (!empty($usuarioCadastrado['email_user'])): ?>
                                 <td><?php echo $usuarioCadastrado['email_user'] ?></td>
@@ -53,3 +66,5 @@
         </div>
     </div>
 </center>
+</body>
+</html>

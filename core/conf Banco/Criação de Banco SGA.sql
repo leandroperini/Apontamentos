@@ -42,7 +42,6 @@ CREATE TABLE IF NOT EXISTS `sga`.`user` (
   `senha_user` VARCHAR(45) NULL,
   `dt_create_user` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data e hora da criação do usuário',
   `status_user` BIT(1) NOT NULL DEFAULT 1 COMMENT '0 = Inativo; 1 - Ativo',
-  `codigo_user` VARCHAR(45) NOT NULL COMMENT 'chave de reset de senha',
   PRIMARY KEY (`id_user`, `cargo_user`),
   UNIQUE INDEX `email_user_UNIQUE` (`email_user` ASC),
   INDEX `fk_cargo_id_userx` (`cargo_user` ASC),
@@ -123,9 +122,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `sga`;
-INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Estagiário', 'Campo');
+INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Estagiario', 'Campo');
 INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Montador', 'Campo');
-INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Técnico', 'Campo');
+INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Tecnico', 'Campo');
 INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Projetista', 'Campo');
 INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Gestor', 'Gestao');
 INSERT INTO `sga`.`cargo` (`nome_cargo`, `permissao_cargo`) VALUES ('Staff', 'Controller');

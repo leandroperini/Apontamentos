@@ -8,6 +8,7 @@
 class LoginController extends AppController {
 
     public function index($param) {
+        $this->layout = 'empty';
         $this->page = 'login/login';
         
         /*
@@ -51,6 +52,12 @@ class LoginController extends AppController {
     }
 
     public function cadastroNovo($params) {
+        
+        // Busca dos cargos no banco de bados
+        $query = $this->db->execute("SELECT * FROM cargo");
+        // Atribui os valores da conulta para passagem para a view
+        $this->cargosUsuarios = $query;
+        
         $this->page = 'login/cadastrar';
         
         if (isset($_POST["nome"]) && isset($_POST["user"]) && isset($_POST["senha"])) {
@@ -91,11 +98,9 @@ class LoginController extends AppController {
 
     public function usuarios($param) {
         $this->page = 'login/usuarios';
-        
-        //print_r($this->db->execute("SELECT * FROM user"));
+
         $query = $this->db->execute("SELECT * FROM user");
-//        $variavel = mysqli_fetch_row($query); nao use mais isso, a n ser que queira refazer o que está na função db->execute
-//        a função já retorna o que você precisa(um array) se quiser explico novamente
+
         $this->usuariosCadastrados = $query; // aqui é como você passa uma variável para a view assim pode preencher o html com o conteúdo dela, na view ela terá o mesmo nome, vá até a view para entender o resto
 //        esses são outros exemplos de variaveis que pode passar todas elas serão acessiveis na view através de: $class->nomeVariavel, por boa prática atribua os valores que serão passados para a view sempre no fim da função
         $this->usuarioLogado       = true;
