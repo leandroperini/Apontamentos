@@ -189,7 +189,7 @@ Tela de Apontamentos
                         <input type="radio" name="classificação" value="Ruim"> Ruim
                         <input type="radio" name="classificação" value="Péssimo"> Péssimo <br><br>
                         <button type="submit" name="submit" id="submit" class="btn btn-success">Finalizar Apontamentos do Dia</button>
-                    </center>
+                    </center> 
                 </div>
                 </div>
               </div>

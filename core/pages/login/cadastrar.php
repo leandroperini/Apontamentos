@@ -110,7 +110,7 @@
           </div>
         </div>
         <!-- /page content -->
-      </div>
+      </div> 
     </div>
   </div>
 </body>

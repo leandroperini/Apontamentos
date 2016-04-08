@@ -749,7 +749,7 @@ Tela Inicial após a validação do acesso
                         <td class=" ">Mike Smith</td>
                         <td class=" ">Paid</td>
                         <td class="a-right a-right ">$432.26</td>
-                        <td class=" last"><a href="#">View</a>
+                        <td class=" last"><a href="#">View</a> 
                         </td>
                       </tr>
                       <tr class="odd pointer">
