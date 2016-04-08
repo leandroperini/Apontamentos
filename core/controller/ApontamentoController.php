@@ -8,7 +8,7 @@ class ApontamentoController extends AppController {
 
     public function index($param) {
         // Busca dos cargos no banco de bados
-        $query = $this->db->execute("SELECT * FROM evento");
+        $query = $this->db->execute("SELECT * FROM evento ORDER BY `nome_evento`");
         // Atribui os valores da conulta para passagem para a view
         $this->eventosApontamento = $query;
         
