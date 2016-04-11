@@ -62,71 +62,136 @@ Tela de Apontamentos
                 <form method="POST" data-parsley-validate class="form-horizontal form-label-left">
                     <table class="table table-hover">
                         <tr>
-                          <td>Data:</td>
-                          <td><input type="date" name="data" id="data" /></td>
-                          <td>&nbsp;</td>
-                          <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td>Hora Inicial:</td>
-                          <td><input type="time" name="hrInicial" id="hrInicial" /></td>
-                          <td>Hora Final:</td>
-                          <td><input type="time" name="hrFinal" id="hrInicial" /></td>
-                        </tr>
-                        <tr>
-                          <td>OS:</td>
-                          <td align="left">
-                            <input type="search" name="OS" size="8" maxlength="25"> -
-                            <select name="ano">
-                                <option>2016</option>
-                                <option>2015</option>
-                                <option>2014</option>
-                                <option>2013</option>
-                            </select>
-                          </td>
-                          <td>Site:</td>
-                          <td><input type="search" name="site" size="16" maxlength="16"></td>
-                        </tr>
-                        <tr>
-                          <td>Evento:</td>
-                            <td>
-                              <?php
-    //                                "@duvida_perini";
-                              // Montar o select apartir com os dados da tabela evento do banco
-                              ?>
-                              <select name="Evento">
-                                  <option value="">Selecione...</option>
-                                  <?php foreach ($class->eventosApontamento as $key => $eventosApontamento) : ?>
-                                  <?php echo("<option value='".$eventosApontamento['id_evento']."'>".$eventosApontamento['nome_evento']."</option>"); ?>
-                      <?php endforeach; ?>
-                              </select>
-                          </td>
-                          <td>Gestor:</td>
                           <td>
-                            <select name="gestor">
-                                <option>Anderson</option>
-                                <option>Alex</option>
-                                <option>Maro</option>
-                                <option>André</option>
-                                <option>Gerlan</option>
-                                <option>Henrique</option>
-                                <option>Tárcio</option>
-                                <option>Cláudio</option>
-                            </select>
+                              <label class="control-label ">Data:</label>
+                          </td>
+                          <td>
+                              <div class="col-md-12">
+                                  <input type="date" class="form-control">
+                              </div>
+                          </td>
+                          <td>
+                              <label class="control-label ">Registro:</label>
+                          </td>
+                          <td>
+                            <div class="col-md-12">
+                              <input type="text" class="form-control" disabled="disabled" placeholder="01">
+                            </div>
                           </td>
                         </tr>
                         <tr>
-                          <td>Atividade:</td>
-                          <td colspan="3"><textarea name="Atividade" rows="2" cols="1" id="Atividade"></textarea></td>
+                          <td>
+                              <label class="control-label ">Hora_Inicial:</label>
+                          </td>
+                          <td>
+                              <div class="col-md-8">
+                                  <input type="time" class="form-control">
+                              </div>
+                          </td>
+                          <td>
+                              <label class="control-label">Hora_Final:</label>
+                          </td>
+                          <td>
+                              <div class="col-md-8">
+                                  <input type="time" class="form-control">
+                              </div>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Observação:</td>
-                          <td colspan="3"><textarea name="Observacao" rows="2" cols="1" id="Observacao"></textarea></td>
-                          
+                          <td>
+                              <label class="control-label ">OS:</label>
+                          </td>
+                          <td>
+                              <div class="col-md-6">
+                                <input type="text" class="form-control">
+                              </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                      <select class="form-control">
+                                          <option>Ano</option>
+                                          <option>16</option>
+                                          <option>15</option>
+                                          <option>14</option>
+                                          <option>13</option>
+                                      </select>
+                                    </div>
+                                </div>
+                          </td>
+                          <td>
+                              <label class="control-label ">Site:</label>
+                          </td>
+                          <td>
+                              <div class="col-md-12">
+                                <input type="text" class="form-control">
+                              </div>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Veículo:</td>
-                          <td><input type="search" name="site" size="16" maxlength="16"></td>
+                          <td>
+                              <label class="control-label ">Evento:</label>
+                          </td>
+                          <td>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                  <select class="form-control">
+                                    <option>Selecione...</option>
+                                     <?php foreach ($class->eventosApontamento as $key => $eventosApontamento) : ?>
+                                     <?php echo("<option value='".$eventosApontamento['id_evento']."'>".$eventosApontamento['nome_evento']."</option>"); ?>
+                                    <?php endforeach; ?>
+                              </select>
+                                </div>
+                            </div>    
+                          </td>
+                          <td>
+                              <label class="control-label ">Gestor:</label>
+                          </td>
+                          <td>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                  <select class="form-control">
+                                    <option>Selecione...</option>
+                                    <option>Anderson</option>
+                                    <option>Alex</option>
+                                    <option>Maro</option>
+                                    <option>André</option>
+                                    <option>Gerlan</option>
+                                    <option>Henrique</option>
+                                    <option>Tárcio</option>
+                                    <option>Cláudio</option>
+                                  </select>
+                                </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <label class="control-label ">Atividade:</label>
+                          </td>
+                          <td colspan="3">
+                            <div class="col-md-12 col-sm-9 col-xs-12">
+                              <textarea class="form-control" rows="2" cols="30" placeholder='Descreva suas atividades'></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <label class="control-label ">Observação:</label>
+                          </td>
+                          <td colspan="3">
+                          <div class="col-md-12 col-sm-9 col-xs-12">
+                              <textarea class="form-control" rows="2" cols="30" placeholder='Campo opcional'></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <label class="control-label ">Veículo:</label>
+                          </td>
+                          <td>
+                              <div class="col-md-12 col-sm-9 col-xs-12">
+                                <input type="text" class="form-control">
+                              </div>
+                          </td>
                           <td><button type="reset" name="reset" id="reset" class="btn btn-default">Limpar</button></td>
                           <td><button type="submit" name="submit" id="submit" class="btn btn-primary">Registrar Apontamento</button></td>
                         </tr>
@@ -163,21 +228,51 @@ Tela de Apontamentos
                         <td>08:00</td>
                         <td>09:00</td>
                         <td>Deslocamento</td>
-                        <td class=" last"><a href="#">View</a>
+                        <td>
+                            <div>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                      <ul class="dropdown"></ul>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                                  </ul>
+                          </div>
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>09:00</td>
                         <td>10:00</td>
                         <td>Testes</td>
-                        <td class=" last"><a href="#">View</a>
+                        <td> 
+                          <div >
+                            <ul class="nav navbar-right panel_toolbox">
+                              <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown"></ul>
+                              </li>
+                              <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                            </ul>
+                          </div>
+                        </td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
                         <td>10:00</td>
                         <td>11:00</td>
                         <td>Instalação</td>
-                        <td class=" last"><a href="#">View</a>
+                        <td>
+                            <div>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                      <ul class="dropdown"></ul>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                                  </ul>
+                            </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -201,4 +296,3 @@ Tela de Apontamentos
         
       </div>
       <!-- /page content -->
-    

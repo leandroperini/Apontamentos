@@ -8,6 +8,7 @@
 class LoginController extends AppController {
 
     public function index($param) {
+        $this->layout = 'logintemplate';
         $this->page = 'login/login';
         
         // Verifica se o usuário digitou o usuário e a senha   
@@ -45,6 +46,7 @@ class LoginController extends AppController {
     }
     
     public function recuperarSenha($param) {
+        $this->layout = 'logintemplate';
         $this->page = 'login/recuperarSenha';
 
     }

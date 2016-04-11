@@ -1,18 +1,6 @@
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Meta, title, CSS, favicons, etc. -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap core CSS -->
-
-  <link href="/assets/gentelella-master/production/css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="/assets/gentelella-master/production/fonts/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/assets/gentelella-master/production/css/animate.min.css" rel="stylesheet">
-
+  
   <!-- Custom styling plus plugins -->
   <link href="/assets/gentelella-master/production/css/custom.css" rel="stylesheet">
   <link href="/assets/gentelella-master/production/css/icheck/flat/green.css" rel="stylesheet">
@@ -21,13 +9,13 @@
 
 </head>
 
-<body style="background:#F7F7F7;">
+<body>
 
   <div class="">
     <a class="hiddenanchor" id="toregister"></a>
     <a class="hiddenanchor" id="tologin"></a>
     
-    <h1>
+    <h1 class="login_content" id="login">
         .:: SGA - Sistema de Gerenciamento de Apontamentos ::.
     </h1>
     
@@ -64,13 +52,13 @@
         
       <div id="register" class="animate form">
         <section class="login_content">
-          <form>
+            <form method="POST">
             <h1>Recuperar Senha</h1>
             <div>
               <input type="text" class="form-control" placeholder="Usuário" required="" />
             </div>
             <div>
-              <input type="email" class="form-control" placeholder="Email" required="" />
+                <input type="text" class="form-control" placeholder="Código" required="" />
             </div>
             <div>
               <input type="password" class="form-control" placeholder="Nova Senha" required="" />
@@ -79,7 +67,7 @@
               <input type="password" class="form-control" placeholder="Redigite a senha" required="" />
             </div>
             <div>
-              <a class="btn btn-default submit" href="/login">Resetar</a>
+              <button class="btn btn-danger submit" >Resetar</button>
             </div>
             <div class="clearfix"></div>
             <div class="separator">
@@ -101,3 +89,4 @@
 </body>
 
 </html>
+
