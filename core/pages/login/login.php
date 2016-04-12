@@ -34,16 +34,6 @@
               <button type="submit" name="submit" id="submit" class="btn btn-success">Acessar</button>
               <a href="#toregister" class="to_register"> Recuperar senha </a>
             </div>
-            <div class="clearfix"></div>
-            <div class="separator">
-
-              
-              <div class="clearfix"></div>
-              <br />
-              <div>
-                <p>©2016 All Rights Reserved. Tárcio Lima e Maro Lopes</p>
-              </div>
-            </div>
           </form>
           <!-- form -->
         </section>
@@ -68,15 +58,6 @@
             </div>
             <div>
               <button class="btn btn-danger submit" >Resetar</button>
-            </div>
-            <div class="clearfix"></div>
-            <div class="separator">
-
-              <div class="clearfix"></div>
-              <br />
-              <div>
-                <p>©2016 All Rights Reserved. Tárcio Lima e Maro Lopes</p>
-              </div>
             </div>
           </form>
           <!-- form -->

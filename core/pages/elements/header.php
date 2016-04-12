@@ -8,14 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Apontamentos</title>
-
+        
         <!-- Bootstrap core CSS -->
 
         <link href="/assets/gentelella-master/production/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="/assets/gentelella-master/production/fonts/css/font-awesome.min.css" rel="stylesheet">
         <link href="/assets/gentelella-master/production/css/animate.min.css" rel="stylesheet">
-
 
         <script src="/assets/gentelella-master/production/js/jquery.min.js"></script>
 

@@ -25,6 +25,7 @@
                     <tr>
                         <th>Código</th>
                         <th>Nome</th>
+                        <th>Login</th>
                         <th>Email</th>
                         <th>Cargo</th>
                         <th>Senha</th>
@@ -33,14 +34,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--  na linha abaixo eu abri uma tag php, desse jeito o apache sabe que ele tem que executar o código php e exibir o conteúdo que estiver dentro dele, no caso é um foreach, mas poderia ser um if onde só exibe um texto se a condição do if for true, por exemplo um texto de erro que aparece quando um dos campos estiver vazio
-
-           abaixo mostro diversas maneiras de colocar uma mensagem caso o campo estiver vazio
-                    -->
                     <?php foreach ($class->usuariosCadastrados as $key => $usuarioCadastrado) : ?>
                     <tr>
                             <td><?php echo $usuarioCadastrado['id_user'] ?></td>
                             <td><?php echo $usuarioCadastrado['nome_user'] ?></td>
+                            <td><?php echo $usuarioCadastrado['login_user'] ?></td>
                             <?php if (!empty($usuarioCadastrado['email_user'])): ?>
                                 <td><?php echo $usuarioCadastrado['email_user'] ?></td>
                             <?php else: ?>
@@ -66,5 +64,3 @@
         </div>
     </div>
 </center>
-</body>
-</html>

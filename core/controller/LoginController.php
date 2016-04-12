@@ -59,24 +59,26 @@ class LoginController extends AppController {
         
         $this->page = 'login/cadastrar';
         
-        if (isset($_POST["nome"]) && isset($_POST["user"]) && isset($_POST["senha"])) {
+        if (isset($_POST["nome"]) && isset($_POST["login"]) && isset($_POST["senha"])) {
             $nome   = $_POST["nome"];
-            $user   = $_POST["user"];
+            $login   = $_POST["login"];
             $senha  = MD5($_POST["senha"]);
             $email  = $_POST["email"];
             $cargo  = $_POST["cargo"];
             $status = $_POST["status"];
 
             if (isset($_POST["submit"])) {
-                $resultado = $this->db->execute("INSERT user (nome_user, email_user, cargo_user, senha_user, status_user) values (?, ?, ?, ?, ?);", [
+                $resultado = $this->db->execute("INSERT user (nome_user, login_user, email_user, cargo_user, senha_user, status_user) values (?, ?, ?, ?, ?, ?);", [
                 'values' => [
-                    $user,
+                    $nome,
+                    $login,
                     $email,
                     $cargo,
                     $senha,
                     $status,
                 ],
                 'types'  => [
+                    's',
                     's',
                     's',
                     'i',
@@ -100,11 +102,7 @@ class LoginController extends AppController {
 
         $query = $this->db->execute("SELECT * FROM user");
 
-        $this->usuariosCadastrados = $query; // aqui é como você passa uma variável para a view assim pode preencher o html com o conteúdo dela, na view ela terá o mesmo nome, vá até a view para entender o resto
-//        esses são outros exemplos de variaveis que pode passar todas elas serão acessiveis na view através de: $class->nomeVariavel, por boa prática atribua os valores que serão passados para a view sempre no fim da função
-        $this->usuarioLogado       = true;
-        $this->horaAtual           = '10:35';
-        $this->quantidadeDeAcessos = 66;
+        $this->usuariosCadastrados = $query;
     }
 
 }

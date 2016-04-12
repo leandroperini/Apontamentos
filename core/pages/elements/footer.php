@@ -1,3 +1,4 @@
+
 <div id="custom_notifications" class="custom-notifications dsp_none">
     <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
     </ul>
@@ -17,6 +18,8 @@
 
 <!-- pace -->
 <script src="/assets/gentelella-master/production/js/pace/pace.min.js"></script>
+
+<font class="login_box" id="right">©2016 All Rights Reserved. Tárcio Lima e Maro Lopes</font>
 
 </body>
 
