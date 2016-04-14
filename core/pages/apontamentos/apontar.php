@@ -1,21 +1,4 @@
 
-<!-- Custom styling plus plugins -->
-<link href="/assets/gentelella-master/production/css/custom.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/icheck/flat/green.css" rel="stylesheet">
-<!-- editor -->
-<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/editor/external/google-code-prettify/prettify.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/editor/index.css" rel="stylesheet">
-<!-- select2 -->
-<link href="/assets/gentelella-master/production/css/select/select2.min.css" rel="stylesheet">
-<!-- switchery -->
-<link rel="stylesheet" href="/assets/gentelella-master/production/css/switchery/switchery.min.css" />
-
-<script src="js/jquery.min.js"></script>
-
-<script src="../assets/js/ie8-responsive-file-warning.js"></script>
-        
-</head>
 
 <!DOCTYPE html>
 <!--
@@ -188,7 +171,6 @@ Tela de Apontamentos
                         </tr>
                     </table>
                     </form>
-
                 </div>
               </div>
             </div>
@@ -197,11 +179,19 @@ Tela de Apontamentos
               <div class="x_panel">
                 <div class="x_title">
                   <h2>Eventos Salvos <small>Relação de eventos cadastrados</small></h2>
-                  
                   <div class="clearfix"></div>
                 </div>
+                  
                 <div class="x_content">
-
+                    
+                    <form method="POST" class="form-group-sm pull-right">
+                        <div class="col-md-2">Data: </div>
+                        <div class="col-md-7">
+                          <input type="date" name="data_filter" class="form-control">
+                        </div>
+                        <input class="btn btn-success" type="button" value="Filtrar" onclick="location. href='/' ">
+                    </form>
+                    
                   <table class="table table-striped">
                     <thead>
                       <tr>
@@ -220,13 +210,24 @@ Tela de Apontamentos
                         <td>Deslocamento</td>
                         <td>
                             <div>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                      <ul class="dropdown"></ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a></li>
-                                  </ul>
+                              <ul class="nav navbar-right panel_toolbox">
+                                <li class="dropdown">
+                                  <button class="btn btn-primary" type="button" title="Crop">
+                                      <span class="docs-tooltip" data-toggle="tooltip" title="Visualizar registro">
+                                          <span class="fa fa-crop"></span>
+                                      </span>
+                                  </button>
+                                  <ul class="dropdown"></ul>
+                                </li>
+                                <li class="dropdown">
+                                  <button class="btn btn-danger" type="button" title="Clear">
+                                      <span class="docs-tooltip" data-toggle="tooltip" title="Apagar registro">
+                                          <span class="fa fa-close"></span>
+                                      </span>
+                                  </button>
+                                  <ul class="dropdown"></ul>
+                                </li>
+                              </ul>
                           </div>
                         </td>
                       </tr>
@@ -236,13 +237,24 @@ Tela de Apontamentos
                         <td>10:00</td>
                         <td>Testes</td>
                         <td> 
-                          <div >
+                          <div>
                             <ul class="nav navbar-right panel_toolbox">
                               <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <button class="btn btn-primary" type="button" title="Crop">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title="Visualizar registro">
+                                        <span class="fa fa-crop"></span>
+                                    </span>
+                                </button>
                                 <ul class="dropdown"></ul>
                               </li>
-                              <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                              <li class="dropdown">
+                                <button class="btn btn-danger" type="button" title="Clear">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title="Apagar registro">
+                                        <span class="fa fa-close"></span>
+                                    </span>
+                                </button>
+                                <ul class="dropdown"></ul>
+                              </li>
                             </ul>
                           </div>
                         </td>
@@ -256,11 +268,22 @@ Tela de Apontamentos
                             <div>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                      <button class="btn btn-primary" type="button" title="Crop">
+                                          <span class="docs-tooltip" data-toggle="tooltip" title="Visualizar registro">
+                                              <span class="fa fa-crop"></span>
+                                          </span>
+                                      </button>
                                       <ul class="dropdown"></ul>
                                     </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a></li>
-                                  </ul>
+                                    <li class="dropdown">
+                                      <button class="btn btn-danger" type="button" title="Clear">
+                                          <span class="docs-tooltip" data-toggle="tooltip" title="Apagar registro">
+                                              <span class="fa fa-close"></span>
+                                          </span>
+                                      </button>
+                                    <ul class="dropdown"></ul>
+                                </li>
+                                </ul>
                             </div>
                         </td>
                       </tr>
@@ -286,3 +309,5 @@ Tela de Apontamentos
         
       </div>
       <!-- /page content -->
+
+  
