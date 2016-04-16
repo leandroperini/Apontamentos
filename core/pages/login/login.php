@@ -26,6 +26,7 @@
               <a href="#toregister" class="to_register"> Recuperar senha </a>
             </div>
           </form>
+            
           <!-- form -->
         </section>
         <!-- content -->

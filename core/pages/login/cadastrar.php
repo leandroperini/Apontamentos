@@ -85,7 +85,7 @@
                     <div class="ln_solid"></div>
                     <div class="form-group">
                       <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button type="reset" name="reset" id="reset" class="btn btn-primary">Cancelar</button>
+                          <button type="reset" name="reset" id="reset" class="btn btn-danger">Cancelar</button>
                           <button type="submit" name="submit" id="submit" class="btn btn-success">Cadastrar</button>
                       </div>
                     </div>

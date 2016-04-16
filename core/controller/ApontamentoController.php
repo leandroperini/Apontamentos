@@ -17,7 +17,7 @@ class ApontamentoController extends AppController {
         // Atribui os valores da conulta para passagem para a view
         $this->gestorApontamento = $queryGestor;
         
-        // Busca aontamentos no banco de bados
+        // Busca apontamentos no banco de bados
         $queryApontamento = $this->db->execute("SELECT * FROM apontamento");
         // Atribui os valores da conulta para passagem para a view
         $this->listaApontamento = $queryApontamento;
@@ -76,14 +76,23 @@ class ApontamentoController extends AppController {
     }
     
     public function apontamentoConsulta($param) {
+        // Busca dos gestores no banco de bados
+        $queryGestor = $this->db->execute("SELECT * FROM user WHERE cargo_user=5 AND status_user=1 ORDER BY `nome_user`");
+        // Atribui os valores da conulta para passagem para a view
+        $this->gestorApontamento = $queryGestor;
+        
+        // Busca dos Ordem de Serviço no banco de bados
+        $queryOS = $this->db->execute("SELECT * FROM apontamento ORDER BY `os_apontamento`");
+        // Atribui os valores da conulta para passagem para a view
+        $this->ordemServApontamento = $queryOS;
+        
         $this->page = 'apontamentos/consulta';
 
         if (isset($_POST["date"]) || isset($_POST["hrInicial"]) || isset($_POST["hrFinal"]) || isset($_POST["tecnicoCod"]) || isset($_POST["TecnicoNome"]) || isset($_POST["GestorNome"])) {
                 $data   = $_POST["date"];
-                $hrInicial   = $_POST["hrInicial"];
-                $hrFinal  = $_POST["hrFinal"];
-                $tecnicoCod  = $_POST["tecnicoCod"];
-                $TecnicoNome  = $_POST["TecnicoNome"];
+                $dtInicial   = $_POST["dtInicial"];
+                $dtFinal  = $_POST["dtFinal"];
+                $TecnicoNome  = $_POST["tecNome"];
                 $GestorNome = $_POST["GestorNome"];
 
                 print_r($this->db->execute("SELECT * FROM apontamento")) or die (mysql_error());
