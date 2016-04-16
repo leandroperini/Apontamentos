@@ -17,6 +17,11 @@ class ApontamentoController extends AppController {
         // Atribui os valores da conulta para passagem para a view
         $this->gestorApontamento = $queryGestor;
         
+        // Busca aontamentos no banco de bados
+        $queryApontamento = $this->db->execute("SELECT * FROM apontamento");
+        // Atribui os valores da conulta para passagem para a view
+        $this->listaApontamento = $queryApontamento;
+        
         $this->page = 'apontamentos/apontar';
            
          if (isset($_POST) && isset($_POST["data_apontar"])) { 
@@ -61,7 +66,7 @@ class ApontamentoController extends AppController {
                     's',
                 ],
             ]);
-            header('Location: /apontamentos/consultaResposta');
+            header('Location: /apontamentos/apontar');
             }
         }
     }

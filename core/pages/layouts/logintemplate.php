@@ -1,4 +1,4 @@
-<?php include_once (dirname(__FILE__) . '/' . '../elements/header.php'); ?>
+<?php include_once (dirname(__FILE__) . '/' . '../elements/headerLogin.php'); ?>
 
 <div class="right_col" style="background:#F7F7F7;">
 

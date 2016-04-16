@@ -2,8 +2,6 @@
 
 /**
  * Description of MainController
- *
- * @author Leandro Perini
  */
 class LoginController extends AppController {
 

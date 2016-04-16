@@ -1,28 +1,26 @@
 
-
 <!DOCTYPE html>
 <!--
 Tela de Apontamentos
 -->
+    <fieldset>
+        <table width="100%">
+            <tr>
+                <td>
+                    <input class="btn btn-success" type="button" value="Home" onclick="location. href='/' ">
+                </td>
 
-        <fieldset>
-            <table width="100%">
-                <tr>
-                    <td>
-                        <input class="btn btn-success" type="button" value="Home" onclick="location. href='/' ">
-                    </td>
-                    
-                    <td align="center">
-                        <font face="verdana" size="4" color="red">Decreva suas atividades realizadas</font>
-                    </td>
-                    <td align="right">
-                        <span id="clock" ></span>
-                        <script>setTimeout("data_hora()",10);</script>
-                        <script type="text/javascript" src="/assets/js/data_hora.js"></script>
-                    </td>
-                </tr>
-            </table>
-        </fieldset>
+                <td align="center">
+                    <font face="verdana" size="4" color="red">Decreva suas atividades realizadas</font>
+                </td>
+                <td align="right">
+                    <span id="clock" ></span>
+                    <script>setTimeout("data_hora()",10);</script>
+                    <script type="text/javascript" src="/assets/js/data_hora.js"></script>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
 
       <!-- page content -->
       <div class="right_col" role="main">
@@ -196,6 +194,7 @@ Tela de Apontamentos
                     <thead>
                       <tr>
                         <th>#</th>
+                        <th>Data</th>
                         <th>Hora Inicial</th>
                         <th>Hora Final</th>
                         <th>Evento</th>
@@ -204,89 +203,22 @@ Tela de Apontamentos
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>08:00</td>
-                        <td>09:00</td>
-                        <td>Deslocamento</td>
+                        <!-- Loop de visualização de apontamentos -->
+                        <?php foreach ($class->listaApontamento as $key => $listaApontamento) : ?>
+                            <?php echo("<th scope='row'>".$listaApontamento['id_apontamento']."</th>"); ?>
+                            <?php echo("<td>".$listaApontamento['data_apontamento']."</td>"); ?>
+                            <?php echo("<td>".$listaApontamento['hr_ini_apontamento']."</td>"); ?>
+                            <?php echo("<td>".$listaApontamento['hr_fim_apontamento']."</td>"); ?>
+                            <?php echo("<td>".$listaApontamento['evento_apontamento']."</td>"); ?>
                         <td>
-                            <div>
-                              <ul class="nav navbar-right panel_toolbox">
-                                <li class="dropdown">
-                                  <button class="btn btn-primary" type="button" title="Crop">
-                                      <span class="docs-tooltip" data-toggle="tooltip" title="Visualizar registro">
-                                          <span class="fa fa-crop"></span>
-                                      </span>
-                                  </button>
-                                  <ul class="dropdown"></ul>
-                                </li>
-                                <li class="dropdown">
-                                  <button class="btn btn-danger" type="button" title="Clear">
-                                      <span class="docs-tooltip" data-toggle="tooltip" title="Apagar registro">
-                                          <span class="fa fa-close"></span>
-                                      </span>
-                                  </button>
-                                  <ul class="dropdown"></ul>
-                                </li>
-                              </ul>
-                          </div>
+                            <!-- Loop para exibição de botões de função -->
+                            <?php echo("<a href='#' class='btn btn-primary btn-xs'>".
+                                "<i class='fa fa-folder'></i> Editar </a>".
+                                "<a href='#' class='btn btn-danger btn-xs'>".
+                                "<i class='fa fa-trash-o'></i> Excluir </a>"); ?>
                         </td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>09:00</td>
-                        <td>10:00</td>
-                        <td>Testes</td>
-                        <td> 
-                          <div>
-                            <ul class="nav navbar-right panel_toolbox">
-                              <li class="dropdown">
-                                <button class="btn btn-primary" type="button" title="Crop">
-                                    <span class="docs-tooltip" data-toggle="tooltip" title="Visualizar registro">
-                                        <span class="fa fa-crop"></span>
-                                    </span>
-                                </button>
-                                <ul class="dropdown"></ul>
-                              </li>
-                              <li class="dropdown">
-                                <button class="btn btn-danger" type="button" title="Clear">
-                                    <span class="docs-tooltip" data-toggle="tooltip" title="Apagar registro">
-                                        <span class="fa fa-close"></span>
-                                    </span>
-                                </button>
-                                <ul class="dropdown"></ul>
-                              </li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>10:00</td>
-                        <td>11:00</td>
-                        <td>Instalação</td>
-                        <td>
-                            <div>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li class="dropdown">
-                                      <button class="btn btn-primary" type="button" title="Crop">
-                                          <span class="docs-tooltip" data-toggle="tooltip" title="Visualizar registro">
-                                              <span class="fa fa-crop"></span>
-                                          </span>
-                                      </button>
-                                      <ul class="dropdown"></ul>
-                                    </li>
-                                    <li class="dropdown">
-                                      <button class="btn btn-danger" type="button" title="Clear">
-                                          <span class="docs-tooltip" data-toggle="tooltip" title="Apagar registro">
-                                              <span class="fa fa-close"></span>
-                                          </span>
-                                      </button>
-                                    <ul class="dropdown"></ul>
-                                </li>
-                                </ul>
-                            </div>
-                        </td>
-                      </tr>
+                        <?php endforeach; ?>
                     </tbody>
                   </table>
                 <div>

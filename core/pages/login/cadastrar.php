@@ -1,22 +1,4 @@
 
-<!-- Custom styling plus plugins -->
-<link href="/assets/gentelella-master/production/css/custom.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/icheck/flat/green.css" rel="stylesheet">
-<!-- editor -->
-<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/editor/external/google-code-prettify/prettify.css" rel="stylesheet">
-<link href="/assets/gentelella-master/production/css/editor/index.css" rel="stylesheet">
-<!-- select2 -->
-<link href="/assets/gentelella-master/production/css/select/select2.min.css" rel="stylesheet">
-<!-- switchery -->
-<link rel="stylesheet" href="/assets/gentelella-master/production/css/switchery/switchery.min.css" />
-
-<script src="js/jquery.min.js"></script>
-
-<script src="../assets/js/ie8-responsive-file-warning.js"></script>
-        
-</head>
-
 <body class="nav-md">
 
   <div class="container body">
@@ -26,7 +8,11 @@
       <!-- page content -->
       <div class="right_col" role="main">
         <div class="">
-        Seja bem vindo <b><?php echo $_SESSION[@usuario]; ?></b> a Tela de Cadastro de novo usuários.          
+        <div class="x_title">
+            <h2>Cadastro de Usuários <small>Lançamento de novos usuários</small></h2>
+            <div class="clearfix"></div>
+        </div>
+            
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -71,7 +57,7 @@
                     </div>
                          
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Cargo</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Cargo</label> 
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <select id="cargo" name="cargo" class="form-control" required>
                                 <option value="">Selecione...</option>
