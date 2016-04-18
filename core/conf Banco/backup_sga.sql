@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `apontamento` (
   CONSTRAINT `fk_evento_apontamento` FOREIGN KEY (`evento_apontamento`) REFERENCES `evento` (`id_evento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_gestor_apontamento` FOREIGN KEY (`gestor_apontamento`) REFERENCES `gestor` (`id_gestor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `os_apontamento` FOREIGN KEY (`user_apontamento`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Copiando dados para a tabela sga.apontamento: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `apontamento` DISABLE KEYS */;
@@ -63,13 +63,13 @@ CREATE TABLE IF NOT EXISTS `cargo` (
 -- Copiando dados para a tabela sga.cargo: ~9 rows (aproximadamente)
 /*!40000 ALTER TABLE `cargo` DISABLE KEYS */;
 INSERT INTO `cargo` (`id_cargo`, `nome_cargo`, `permissao_cargo`) VALUES
-	(1, 'Estagiário', 'Campo'),
+	(1, 'Estagiario', 'Campo'),
 	(2, 'Montador', 'Campo'),
-	(3, 'Técnico', 'Campo'),
+	(3, 'Tecnico', 'Campo'),
 	(4, 'Projetista', 'Campo'),
 	(5, 'Gestor', 'Gestao'),
 	(6, 'Staff', 'Controller'),
-	(7, 'Consulta', 'Consulta'),
+	(7, 'Consultas', 'Consulta'),
 	(8, 'Coordenador', 'Coordenador'),
 	(100, 'Administrador', 'Root');
 /*!40000 ALTER TABLE `cargo` ENABLE KEYS */;
@@ -85,23 +85,23 @@ CREATE TABLE IF NOT EXISTS `evento` (
 -- Copiando dados para a tabela sga.evento: ~20 rows (aproximadamente)
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
 INSERT INTO `evento` (`id_evento`, `nome_evento`) VALUES
-	(8, 'Aceitação'),
+	(8, 'Aceitacao'),
 	(1, 'Aguardando atividades'),
 	(14, 'Atestado'),
 	(10, 'CGR'),
-	(13, 'Compensação'),
+	(13, 'Compensacao'),
 	(20, 'Descanso Remunerado'),
 	(4, 'Deslocamento'),
-	(11, 'Divisão de Turno'),
-	(9, 'Documentação'),
+	(11, 'Divisao de Turno'),
+	(9, 'Documentacao'),
 	(15, 'Falta'),
 	(3, 'Improdutividade Cliente'),
 	(2, 'Improdutividade Ensel'),
-	(6, 'Instalação'),
-	(17, 'Intervalo de Almoço'),
+	(6, 'Instalacao'),
+	(17, 'Intervalo de Almoco'),
 	(18, 'Intervalo de Janta'),
 	(19, 'Intervalo entre turnos'),
-	(12, 'Supervisão'),
+	(12, 'Supervisao'),
 	(7, 'Teste'),
 	(16, 'Treinamento'),
 	(5, 'Vistoria');
@@ -138,23 +138,37 @@ INSERT INTO `gestor` (`id_gestor`, `nome_gestor`) VALUES
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `nome_user` varchar(45) COLLATE utf8_bin NOT NULL,
+  `login_user` varchar(45) COLLATE utf8_bin NOT NULL,
   `email_user` varchar(45) COLLATE utf8_bin NOT NULL,
   `cargo_user` int(11) NOT NULL,
   `senha_user` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `dt_create_user` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Data e hora da criação do usuário',
   `status_user` bit(1) NOT NULL DEFAULT b'1' COMMENT '0 = Inativo; 1 - Ativo',
-  `codigo_user` varchar(45) COLLATE utf8_bin NOT NULL COMMENT 'chave de reset de senha',
   PRIMARY KEY (`id_user`,`cargo_user`),
   UNIQUE KEY `email_user_UNIQUE` (`email_user`),
   KEY `fk_cargo_id_userx` (`cargo_user`),
   CONSTRAINT `fk_cargo_user` FOREIGN KEY (`cargo_user`) REFERENCES `cargo` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Copiando dados para a tabela sga.user: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela sga.user: ~15 rows (aproximadamente)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id_user`, `nome_user`, `email_user`, `cargo_user`, `senha_user`, `dt_create_user`, `status_user`, `codigo_user`) VALUES
-	(1, 'Tárcio Lima', 'tarcio@ensel.com.br', 100, '202cb962ac59075b964b07152d234b70', '2016-03-28 14:48:18', b'1', ''),
-	(2, 'Maro Lopes', 'maro@ensel.com.br', 100, '202cb962ac59075b964b07152d234b70', '2016-03-28 14:48:18', b'1', '');
+INSERT INTO `user` (`id_user`, `nome_user`, `login_user`, `email_user`, `cargo_user`, `senha_user`, `dt_create_user`, `status_user`) VALUES
+	(1, 'Tarcio Lima', 'tarcio', 'tarcio@ensel.com.br', 100, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:09:22', b'1'),
+	(2, 'Maro Lopes', 'maro', 'maro@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:09:18', b'1'),
+	(15, 'Gerlan Tavares', 'gerlan', 'gerlan@ensel.com.br', 5, '250cf8b51c773f3f8dc8b4be867a9a02', '2016-04-11 23:07:14', b'1'),
+	(16, 'teste', 'teste', 'teste@com', 100, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:07:22', b'1'),
+	(19, 'Anderson Luis', 'anderson', 'anderson@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:07:31', b'1'),
+	(20, 'Andre Barros', 'andre', 'andre@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:09:43', b'1'),
+	(21, 'Alex Diogo', 'Alex', 'alex@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:07:50', b'1'),
+	(22, 'Henrique Oliveira', 'henrique', 'henrique@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:08:00', b'1'),
+	(23, 'Pedro Gomes', 'pedro', 'pedro@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:08:06', b'1'),
+	(24, 'Marcela Teste', 'marcela', 'marcela@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:08:14', b'1'),
+	(25, 'Claudio Figueirero', 'claudio', 'claudio@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:09:57', b'1'),
+	(26, 'Michelle Antunes', 'michelle', 'michelle@ensel.com.br', 6, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:08:35', b'1'),
+	(27, 'Thiago Pessoa', 't.pessoa', 't.pessoa@ensel.com.br', 8, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:08:51', b'1'),
+	(28, 'Gerson Severino', 'gerson', 'gerson@ensel.com.br', 8, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:09:04', b'1'),
+	(29, 'Jose Marcio', 'jose', 'jose@ensel.com.br', 7, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:10:11', b'1'),
+	(31, 'Selma Pessoa', 'selma', 'selma@ensel.com.br', 5, '202cb962ac59075b964b07152d234b70', '2016-04-11 23:06:10', b'0');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

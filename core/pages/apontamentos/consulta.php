@@ -42,10 +42,10 @@ Consulta de Apontamentos
                                     <tr>
                                       <td class="small">Evento:</td>
                                       <td>
-                                          <select name="ordemServApontamento" class="form-control">
+                                          <select name="evento"  class="form-control">
                                             <option>Selecione...</option>
-                                            <?php foreach ($class->ordemServApontamento as $key => $ordemServApontamento) : ?>
-                                            <?php echo("<option value='".$ordemServApontamento['evento_apontamento']."'>".$ordemServApontamento['evento_apontamento']."</option>"); ?>
+                                            <?php foreach ($class->eventoApontamento as $key => $eventoApontamento) : ?>
+                                            <?php echo("<option value='".$eventoApontamento['evento_apontamento']."'>".$eventoApontamento['nome_evento']."</option>"); ?>
                                            <?php endforeach; ?>
                                           </select>
                                       </td>
@@ -53,7 +53,7 @@ Consulta de Apontamentos
                                     <tr>
                                       <td class="small">OS:</td>
                                       <td>
-                                          <select name="ordemServApontamento" class="form-control">
+                                          <select name="ordemServ" class="form-control">
                                             <option>Selecione...</option>
                                             <?php foreach ($class->ordemServApontamento as $key => $ordemServApontamento) : ?>
                                             <?php echo("<option value='".$ordemServApontamento['os_apontamento']."'>".$ordemServApontamento['os_apontamento']."</option>"); ?>
@@ -64,10 +64,10 @@ Consulta de Apontamentos
                                     <tr>
                                       <td class="small">Site:</td>
                                       <td>
-                                          <select name="siteApontamento" class="form-control">
+                                          <select name="site" class="form-control">
                                             <option>Selecione...</option>
-                                            <?php foreach ($class->ordemServApontamento as $key => $ordemServApontamento) : ?>
-                                            <?php echo("<option value='".$ordemServApontamento['site_apontamento']."'>".$ordemServApontamento['site_apontamento']."</option>"); ?>
+                                            <?php foreach ($class->siteApontamento as $key => $siteApontamento) : ?>
+                                            <?php echo("<option value='".$siteApontamento['site_apontamento']."'>".$siteApontamento['site_apontamento']."</option>"); ?>
                                            <?php endforeach; ?>
                                           </select>
                                       </td>
@@ -75,7 +75,7 @@ Consulta de Apontamentos
                                     <tr>
                                       <td class="small">Gestor:</td>
                                       <td>
-                                          <select name="gestorApontamento" class="form-control">
+                                          <select name="gestor" class="form-control">
                                             <option>Selecione...</option>
                                             <?php foreach ($class->gestorApontamento as $key => $gestorApontamento) : ?>
                                             <?php echo("<option value='".$gestorApontamento['gestor_user']."'>".$gestorApontamento['nome_user']."</option>"); ?>
@@ -84,12 +84,12 @@ Consulta de Apontamentos
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td class="small">Site:</td>
+                                      <td class="small">Veículo:</td>
                                       <td>
-                                          <select name="siteApontamento" class="form-control">
+                                          <select name="veiculo" class="form-control">
                                             <option>Selecione...</option>
-                                            <?php foreach ($class->ordemServApontamento as $key => $ordemServApontamento) : ?>
-                                            <?php echo("<option value='".$ordemServApontamento['veiculo_apontamento']."'>".$ordemServApontamento['veiculo_apontamento']."</option>"); ?>
+                                            <?php foreach ($class->veiculoApontamento as $key => $veiculoApontamento) : ?>
+                                            <?php echo("<option value='".$veiculoApontamento['veiculo_apontamento']."'>".$veiculoApontamento['veiculo_apontamento']."</option>"); ?>
                                            <?php endforeach; ?>
                                           </select>
                                       </td>
@@ -100,7 +100,7 @@ Consulta de Apontamentos
                                         </td>
                                         <td>
                                             <input class="btn btn-xs btn-small" type="reset" name="reset" id="reset" value="Limpar" />
-                                            <input class="btn btn-sm btn-primary" type="submit" name="enviar" id="enviar" value="Pesquisar" />
+                                            <input class="btn btn-sm btn-primary" type="submit" name="submit" id="enviar" value="Pesquisar" />
                                         </td>
                                     </tr>
                                   </tbody>
@@ -135,36 +135,19 @@ Consulta de Apontamentos
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      <tr>
-                                        <td>1</td>
-                                        <td>16-abr-16</td>
-                                        <td>Tárcio Lima</td>
-                                        <td>09:00</td>
-                                        <td>10:00</td>
-                                        <td>SPO ABC</td>
-                                        <td>1000-16</td>
-                                        <td>Instalação</td>
-                                      </tr>
-                                      <tr>
-                                        <td>1</td>
-                                        <td>16-abr-16</td>
-                                        <td>Tárcio Lima</td>
-                                        <td>09:00</td>
-                                        <td>10:00</td>
-                                        <td>SPO ABC</td>
-                                        <td>1000-16</td>
-                                        <td>Instalação</td>
-                                      </tr>
-                                      <tr>
-                                        <td>1</td>
-                                        <td>16-abr-16</td>
-                                        <td>Tárcio Lima</td>
-                                        <td>09:00</td>
-                                        <td>10:00</td>
-                                        <td>SPO ABC</td>
-                                        <td>1000-16</td>
-                                        <td>Instalação</td>
-                                      </tr>
+                                        <tr>
+                                          <!-- Loop de visualização de apontamentos -->
+                                          <?php foreach ($class->consultaApontamentos as $key => $consultaApontamentos) : ?>
+                                              <?php echo("<td>".$consultaApontamentos['id_apontamento']."</td>"); ?>
+                                              <?php echo("<td>".$consultaApontamentos['data_apontamento']."</td>"); ?>
+                                              <?php echo("<td>".$consultaApontamentos['user_apontamento']."</td>"); ?>
+                                              <?php echo("<td>".$consultaApontamentos['hr_ini_apontamento']."</td>"); ?>
+                                              <?php echo("<td>".$consultaApontamentos['hr_fim_apontamento']."</td>"); ?>
+                                              <?php echo("<td>".$consultaApontamentos['site_apontamento']."</td>"); ?>
+                                              <?php echo("<td>".$consultaApontamentos['os_apontamento']."</td>"); ?>
+                                              <?php echo("<td>".$consultaApontamentos['evento_apontamento']."</td>"); ?>
+                                        </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                   </table>
                                 </div>

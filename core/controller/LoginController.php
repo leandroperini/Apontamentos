@@ -27,10 +27,6 @@ class LoginController extends AppController {
                 
                 if ($contUser == 1){ // Se variável $contUser = 1, usuário digitado coincide com o banco
                     header('Location: /principal/home');
-                    session_start();
-                    $login = $_SESSION['$usuario'];
-                    $valida = $_SESSION[@validacao];
-                    $user = $_SESSION[@usuario];
                 }
                 else{
                     echo "<script language='javascript' type='text/javascript'>alert('Login inválido! Verifique seu usuário e senha.');"
