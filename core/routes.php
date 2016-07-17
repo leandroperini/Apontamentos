@@ -17,6 +17,8 @@ $ROUTES = [
     
     '/reports/apontamentos_report'              => '/controller/ReportController@index',
     
+    '/permission'                               => '/controller/PermissionController@index',
+    
     '/errors/notfound'                          => '/errors/NotFound',
     
 ];

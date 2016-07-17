@@ -45,7 +45,8 @@
                 <br><a href="apontamentos/apontado">Apontamento Realizado</a><br>
                 <br>
                 <br><a href="reports/apontamentos_report">Relatório de Apontamentos</a><br>
-                
+                <br>
+                <br><a href="permission">Permissões de Usuários</a><br>
                 <br>
             </Center>
         </fieldset>

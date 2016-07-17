@@ -17,8 +17,8 @@ class LoginController extends AppController {
                 $senha   = MD5($_POST["password"]);
                 $contUser = 0; // Variável de contagem de usuário
                 
-                $sql = $this->db->execute("SELECT nome_user FROM user "
-                                        . "WHERE nome_user = '$usuario' && senha_user = '$senha'");
+                $sql = $this->db->execute("SELECT login_user FROM user "
+                                        . "WHERE login_user = '$usuario' && senha_user = '$senha'");
                 
                 // Varre a tabela de Usuários e incrementa em 1 a variável $contUser, sinalizando que o usuário existe
                 foreach ($sql as $key) {
