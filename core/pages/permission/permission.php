@@ -34,11 +34,28 @@
         <label><input type="checkbox" class="flat" > Excluir All Apontamentos</label>
       </div>
       <br><br>
+    </div>
+    
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <div class="checkbox">
+        <label><input type="checkbox" class="flat" > Tela Novo Apontamento</label>
+        <label><input type="checkbox" class="flat" > Tela Consultar Apontamento</label>
+      </div>
+      <br>
+      <div class="checkbox">
+        <label><input type="checkbox" class="flat" > Tela Cadastrar Usuário</label>
+        <label><input type="checkbox" class="flat" > Tela Consultar Usuário</label>
+      </div>
+      <br>
+      <div class="checkbox">
+        <label><input type="checkbox" class="flat" > Tela Permissões</label>
+      </div>
+      <br><br>
       <div class="form-group">
         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
             <button type="reset" name="reset" id="reset" class="btn btn-danger">Cancelar</button>
             <button type="submit" name="submit" id="submit" class="btn btn-success">Salvar</button>
         </div>
-    </div>
+      </div>
     </div>
 </div>

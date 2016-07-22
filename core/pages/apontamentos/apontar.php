@@ -6,10 +6,6 @@ Tela de Apontamentos
     <fieldset>
         <table width="100%">
             <tr>
-                <td>
-                    <input class="btn btn-success" type="button" value="Home" onclick="location. href='/' ">
-                </td>
-
                 <td align="center">
                     <font face="verdana" size="4" color="red">Decreva suas atividades realizadas</font>
                 </td>
@@ -23,7 +19,7 @@ Tela de Apontamentos
     </fieldset>
 
       <!-- page content -->
-      <div class="right_col" role="main">
+      
         <div class="">
 
           <div class="row">
