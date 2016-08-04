@@ -3,18 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/login/usuarios.php</file>
-            <file>file:/C:/xampp/htdocs/Apontamentos/core/controller/LoginController.php</file>
-            <file>file:/C:/xampp/htdocs/Apontamentos/core/database.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/apontamentos/apontar.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/elements/header.php</file>
             <file>file:/C:/xampp/htdocs/Apontamentos/webroot/index.php</file>
-            <file>file:/C:/xampp/htdocs/Apontamentos/core/controller/MainController.php</file>
             <file>file:/C:/xampp/htdocs/Apontamentos/core/routes.php</file>
-            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/login/cadastrar.php</file>
             <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/principal/home.php</file>
-            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/login/login.php</file>
         </group>
         <group>
-            <file>file:/D:/Projetos/SGA/core/controller/LoginController.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/apontamentos/apontar.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/elements/header.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/webroot/index.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/routes.php</file>
+            <file>file:/C:/xampp/htdocs/Apontamentos/core/pages/principal/home.php</file>
         </group>
     </open-files>
 </project-private>
