@@ -1,11 +1,22 @@
 
+    <!-- footer content -->
+      <div class="copyright-info form-group">
+        <p class="pull-right">
+            <font face="verdana" size="2" color="white">©2016 All Rights Reserved. Tárcio Lima e Maro Lopes</font>
+        </p>
+        
       </div>
+    <!-- /footer content -->
+
+      </div>
+      
+      
       <!-- /page content -->
     </div>
 
-
   </div>
         
+  
   <script src="/assets/gentelella-master/production/js/bootstrap.min.js"></script>
   <script src="/assets/gentelella-master/production/js/nicescroll/jquery.nicescroll.min.js"></script>
 
@@ -372,9 +383,6 @@
     });
   </script>
   <!-- /datepicker -->
-
-
-<font class="login_box" id="right">©2016 All Rights Reserved. Tárcio Lima e Maro Lopes</font>
 
 </body>
 

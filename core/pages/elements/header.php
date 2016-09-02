@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SGA Apontamentos! |</title>
+    <title>SGA Apontamentos!</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -46,6 +46,7 @@
         <![endif]-->
 
     </head>
+    
   <body class="nav-md">
    
       <div class="container body">
@@ -152,12 +153,8 @@
         </div>
 
       </div>
+      
       <!-- /top navigation -->
-
 
       <!-- page content -->
       <div class="" role="main">
-
-        
-      
-       

@@ -1,12 +1,6 @@
 
-<body class="nav-md">
-
-  <div class="container body">
-
-    <div class="main_container">
-
       <!-- page content -->
-      <div class="right_col" role="main">
+      <div class="" role="main">
         <div class="">
         <div class="x_title">
             <h2>Cadastro de Usuários <small>Lançamento de novos usuários</small></h2>
@@ -96,7 +90,4 @@
           </div>
         </div>
         <!-- /page content -->
-      </div> 
-    </div>
-  </div>
-</body>
+ </div>
