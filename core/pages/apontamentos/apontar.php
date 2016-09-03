@@ -18,169 +18,141 @@ Tela de Apontamentos
         </table>
     </fieldset>
 
-      <!-- page content -->
-      
-        <div class="">
+
+  <div class="clearfix"></div>
 
           <div class="row">
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
                   <h2>Novo Apontamento <small>Descreva suas atividades</small></h2>
                   <div class="clearfix"></div>
                 </div>
-                <div>
+                <div class="x_content">
+                  <br />
+                  <form class="form-horizontal form-label-left input_mask">
+                    <div class="form-group">
+                        <label class="control-label col-md-6 col-sm-3 col-xs-12">Date do Apontamento *
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                            <input class="date-picker form-control col-md-4 col-xs-8" required="required" type="date" name="data_apontar">
+                          <span class="fa fa-calendar-check-o form-control-feedback right" aria-hidden="true" ></span>
+                        </div>
+                      </div>
+                      
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="time" class="form-control has-feedback-left" id="hrInicial_apontar">
+                      <span class="fa fa-clock-o form-control-feedback left" aria-hidden="true"></span>
+                    </div>
 
-                <form method="POST" data-parsley-validate class="form-horizontal form-label-left">
-                    <table class="table table-hover">
-                        <tr>
-                          <td>
-                              <label class="control-label ">Data:</label>
-                          </td>
-                          <td>
-                              <div class="col-md-12">
-                                  <input type="date" name="data_apontar" class="form-control">
-                              </div>
-                              
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              <label class="control-label ">Hora_Inicial:</label>
-                          </td>
-                          <td>
-                              <div class="col-md-8">
-                                  <input type="time" name="hrInicial_apontar" class="form-control">
-                              </div>
-                          </td>
-                          <td>
-                              <label class="control-label">Hora_Final:</label>
-                          </td>
-                          <td>
-                              <div class="col-md-8">
-                                  <input type="time" name="hrFinal_apontar" class="form-control">
-                              </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              <label class="control-label ">OS:</label>
-                          </td>
-                          <td>
-                              <div class="col-md-6">
-                                <input type="text" name="ordemServ_apontar" class="form-control">
-                              </div>
-                                <div class="form-group">
-                                    <div class="col-md-6">
-                                      <select name="ordemServAno_apontar" class="form-control">
-                                          <option>Ano</option>
-                                          <option>16</option>
-                                          <option>15</option>
-                                          <option>14</option>
-                                          <option>13</option>
-                                      </select>
-                                    </div>
-                                </div>
-                          </td>
-                          <td>
-                              <label class="control-label ">Site:</label>
-                          </td>
-                          <td>
-                              <div class="col-md-12">
-                                <input type="text" name="site_apontar" class="form-control">
-                              </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              <label class="control-label ">Evento:</label>
-                          </td>
-                          <td>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                  <select name="evento_apontar" class="form-control">
-                                    <option>Selecione...</option>
-                                     <?php foreach ($class->eventosApontamento as $key => $eventosApontamento) : ?>
-                                     <?php echo("<option value='".$eventosApontamento['id_evento']."'>".$eventosApontamento['nome_evento']."</option>"); ?>
-                                    <?php endforeach; ?>
-                              </select>
-                                </div>
-                            </div>    
-                          </td>
-                          <td>
-                              <label class="control-label ">Gestor:</label>
-                          </td>
-                          <td>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                  <select name="gestor_apontar" class="form-control">
-                                    <option>Selecione...</option>
-                                     <?php foreach ($class->gestorApontamento as $key => $gestorApontamento) : ?>
-                                     <?php echo("<option value='".$gestorApontamento['cargo_user']."'>".$gestorApontamento['nome_user']."</option>"); ?>
-                                    <?php endforeach; ?>
-                                  </select>
-                                </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input type="time" class="form-control" id="hrFinal_apontar">
+                      <span class="fa fa-clock-o form-control-feedback right" aria-hidden="true" ></span>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">OS *</label>
+                    <div class="col-md-5 col-sm-6 col-xs-12 form-group has-feedback">
+                      <input type="text" class="form-control has-feedback-left" id="ordemServ_apontar" placeholder="OS">
+                      <span class="fa fa-paragraph form-control-feedback left" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-4 form-group has-feedback required">
+                        <select name="ordemServAno_apontar" class="form-control">
+                            <option selected disabled>Ano</option>
+                            <option>2016</option>
+                            <option>2015</option>
+                            <option>2014</option>
+                            <option>2013</option>
+                        </select>
+                    </div>
+                    </div>
+                    
+                      <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Site *</label>
+                          <div class="col-md-9 col-sm-9 col-xs-12 form-group has-feedback-left">
+                          <input type="text" class="form-control" id="inputSuccess5" placeholder="Digite o nome do site">
+                          <span class="fa fa-empire form-control-feedback right" aria-hidden="true"></span>
+                          </div>
+                    </div>
+                      
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Evento *</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12 form-group has-feedback-left">
+                          <select name="evento_apontar" class="form-control">
+                            <option selected disabled>Selecione...</option>
+                             <?php foreach ($class->eventosApontamento as $key => $eventosApontamento) : ?>
+                             <?php echo("<option value='".$eventosApontamento['id_evento']."'>".$eventosApontamento['nome_evento']."</option>"); ?>
+                            <?php endforeach; ?>
+                            </select>
+                          <span class="fa fa-sort-amount-asc form-control-feedback right" aria-hidden="true" ></span>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Gestor * </label>
+                            <div class="col-md-9 col-sm-9 col-xs-12 has-feedback-left">
+                              <select name="gestor_apontar" class="form-control">
+                                <option selected disabled>Selecione...</option>
+                                 <?php foreach ($class->gestorApontamento as $key => $gestorApontamento) : ?>
+                                         <?php echo("<option value='".$gestorApontamento['cargo_user']."'>".$gestorApontamento['nome_user']."</option>"); ?>
+                                        <?php endforeach; ?>
+                                </select>
+                              <span class="fa fa-male form-control-feedback right" aria-hidden="true" ></span>
                             </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              <label class="control-label ">Atividade:</label>
-                          </td>
-                          <td colspan="3">
-                            <div class="col-md-12 col-sm-9 col-xs-12">
-                              <textarea name="atividade_apontar" class="form-control" rows="2" cols="30" placeholder='Descreva suas atividades'></textarea>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              <label class="control-label ">Observação:</label>
-                          </td>
-                          <td colspan="3">
-                          <div class="col-md-12 col-sm-9 col-xs-12">
-                              <textarea name="observacao_apontar" class="form-control" rows="2" cols="30" placeholder='Campo opcional'></textarea>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              <label class="control-label ">Veículo:</label>
-                          </td>
-                          <td>
-                              <div class="col-md-12 col-sm-9 col-xs-12">
-                                <input name="veiculo_apontar" type="text" class="form-control">
-                              </div>
-                          </td>
-                          <td><button type="reset" name="reset_apontar" id="reset" class="btn btn-default">Limpar</button></td>
-                          <td><button type="submit" name="submit_apontar" id="submit" class="btn btn-primary">Registrar Apontamento</button></td>
-                        </tr>
-                    </table>
-                    </form>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Atividade * </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <textarea name="atividade_apontar" class="form-control" rows="3" cols="50" placeholder='Detalhe suas atividades'></textarea>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Obervação: </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <textarea name="observacao_apontar" class="form-control" rows="3" cols="50" placeholder='Informação adicional'></textarea>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Veículo: </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input name="veiculo_apontar" type="text" class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="control-label col-md-12">
+                        <button type="reset" name="reset_apontar" id="reset" class="btn btn-default">Limpar</button>
+                        <button type="submit" name="submit_apontar" id="submit" class="btn btn-primary">Registrar Apontamento</button>
+                      </div>
+                  </form>
                 </div>
               </div>
+
             </div>
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
                   <h2>Eventos Salvos <small>Relação de eventos cadastrados</small></h2>
+                  
                   <div class="clearfix"></div>
                 </div>
-                  
+                
                 <div class="x_content">
+                <br />
                     
-                    <form method="POST" class="form-group-sm pull-right">
-                        <div class="col-md-2">Data: </div>
-                        <div class="col-md-7">
-                          <input type="date" name="data_filter" class="form-control">
+                    <form method="POST" class="form-horizontal form-label">                        
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Data: </label>
+                        <div class="col-md-5 col-sm-9 col-xs-12">
+                            <input name="data_filter" type="date" class="form-control">
                         </div>
                         <input class="btn btn-success" type="button" value="Filtrar" onclick="location. href='/' ">
                     </form>
                     
                   <table class="table table-striped">
-                    <thead>
+                      <thead>
                       <tr>
                         <th>#</th>
                         <th>Data</th>
@@ -202,9 +174,9 @@ Tela de Apontamentos
                         <td>
                             <!-- Loop para exibição de botões de função -->
                             <?php echo("<a href='#' class='btn btn-primary btn-xs'>".
-                                "<i class='fa fa-folder'></i> Editar </a>".
+                                "<i class='fa fa-folder'></i></a>".
                                 "<a href='#' class='btn btn-danger btn-xs'>".
-                                "<i class='fa fa-trash-o'></i> Excluir </a>"); ?>
+                                "<i class='fa fa-trash-o'></i></a>"); ?>
                         </td>
                       </tr>
                         <?php endforeach; ?>
@@ -220,91 +192,8 @@ Tela de Apontamentos
                         <button type="submit" name="submit_apontamento" id="submit" class="btn btn-success">Finalizar Apontamentos do Dia</button>
                     </center> 
                 </div>
-                </div>
-              </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-      </div>
-      <!-- /page content -->
-
-  <div class="clearfix"></div>
-
-          <div class="row">
-            <div class="col-md-6 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Novo Apontamento <small>Descreva suas atividades</small></h2>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <br />
-                  <form class="form-horizontal form-label-left input_mask">
-
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <label class="control-label col-md-3">Data: </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="date" class="date-picker form-control col-md-14 col-xs-14" >
-                      </div>
-                    </div>
-                      
-                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                      <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="First Name">
-                      <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                      <input type="text" class="form-control" id="inputSuccess3" placeholder="Last Name">
-                      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                      <input type="text" class="form-control has-feedback-left" id="inputSuccess4" placeholder="Email">
-                      <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                      <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone">
-                      <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
-                    </div>
-
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Default Input</label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text" class="form-control" placeholder="Default Input">
-                      </div>
-                    </div>
                     
-                    <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
-                      </div>
-                    </div>
-                    <div class="ln_solid"></div>
-                    <div class="form-group">
-                      <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                        <button type="submit" class="btn btn-primary">Cancel</button>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                      </div>
-                    </div>
-
-                  </form>
                 </div>
-              </div>
-
-            </div>
-
-            
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Eventos Salvos <small>Relação de eventos cadastrados</small></h2>
-                  
-                  <div class="clearfix"></div>
-                </div>
-                
               </div>
             </div>
           </div>
