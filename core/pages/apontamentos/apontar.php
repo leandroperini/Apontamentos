@@ -152,7 +152,7 @@ Tela de Apontamentos
                     </form>
                     
                   <table class="table table-striped">
-                      <thead>
+                      <thead> 
                       <tr>
                         <th>#</th>
                         <th>Data</th>
