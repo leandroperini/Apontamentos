@@ -24,7 +24,7 @@ class ApontamentoController extends AppController {
         
         $this->page = 'apontamentos/apontar';
            
-         if (isset($_POST) && isset($_POST["data_apontar"])) { 
+         if (isset($_POST["data_apontar"])) { 
             $user           = 1;
             $data           = $_POST["data_apontar"];
             $hr_ini         = $_POST["hrInicial_apontar"];
@@ -66,7 +66,10 @@ class ApontamentoController extends AppController {
                     's',
                 ],
             ]);
-            header('Location: /apontamentos/apontar');
+            header('Location: /login/cadastrado');
+            }
+            else {
+                echo "<script language='javascript' type='text/javascript'>alert('Preencha pelo menos um dos campos!');window.location.href='login.html'</script>";
             }
         }
     }
